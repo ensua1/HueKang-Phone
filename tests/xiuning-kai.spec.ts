@@ -86,3 +86,29 @@ test("休宁凯：休闲store买面包触发太显KKT消息", async ({ page }) =
     page.locator(".kzbub").filter({ hasText: "你怎么知道我今天想吃这个" }),
   ).toBeVisible({ timeout: 8000 });
 });
+
+test("休宁凯：主线外关键词触发太显和然竣回复", async ({ page }) => {
+  await unlockPhone(page);
+
+  // 打开太显会话，输入关键词"猫"发送
+  await openKakaoThread(page, "太显");
+  await page.getByRole("textbox", { name: "KKT消息" }).fill("猫");
+  await page.getByRole("button", { name: "发送KKT消息" }).click();
+
+  // 太显的回复消息解锁后在会话中可见
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toBeVisible({ timeout: 8000 });
+
+  // 回桌面，打开然竣会话，输入"拉面"
+  await page.getByRole("button", { name: "返回", exact: true }).last().click();
+  await backHome(page);
+  await openKakaoThread(page, "然竣哥");
+  await page.getByRole("textbox", { name: "KKT消息" }).fill("拉面");
+  await page.getByRole("button", { name: "发送KKT消息" }).click();
+
+  // 然竣的回复消息解锁后在会话中可见
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "婉拒了，控制饮食不吃" }),
+  ).toBeVisible({ timeout: 8000 });
+});

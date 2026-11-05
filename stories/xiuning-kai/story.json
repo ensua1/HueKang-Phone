@@ -484,6 +484,118 @@
         "sender": "杋圭哥",
         "hidden": true,
         "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-kw-cat",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "都说了我不是猫啊",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-th-kw-diandian",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "是在叫我吗？",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-th-rand-1",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "噢，今晚一起吃饭吧",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-th-rand-2",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "干嘛呢",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-th-rand-3",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "洋人叽里咕噜说什么呢",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-th-rand-4",
+        "title": "太显🐱🩶",
+        "sender": "太显🐱🩶",
+        "body": "ᗜ - ᗜ",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-yj-kw-ramen",
+        "title": "然竣哥",
+        "sender": "然竣哥",
+        "body": "婉拒了，控制饮食不吃",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-yj-kw-gangqiugang",
+        "title": "然竣哥",
+        "sender": "然竣哥",
+        "body": "啊爷爷！",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-sb-kw-jiao",
+        "title": "崔秀彬",
+        "sender": "崔秀彬",
+        "body": "这个字不好我们不提",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-sb-kw-pao",
+        "title": "崔秀彬",
+        "sender": "崔秀彬",
+        "body": "这个字不好我们不提",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-bg-kw-gangqiugang",
+        "title": "杋圭哥",
+        "sender": "杋圭哥",
+        "body": "bangbangbangbangbangbang！",
+        "hidden": true,
+        "time": "19:31"
+      },
+      {
+        "id": "kkt-bg-rand-1",
+        "title": "杋圭哥",
+        "sender": "杋圭哥",
+        "body": "我们休宁儿找哥干嘛？",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-bg-rand-2",
+        "title": "杋圭哥",
+        "sender": "杋圭哥",
+        "body": "我刚睡醒",
+        "hidden": true,
+        "time": "19:32"
+      },
+      {
+        "id": "kkt-bg-rand-3",
+        "title": "杋圭哥",
+        "sender": "杋圭哥",
+        "body": "休宁呀，为什么总找哥聊天？",
+        "hidden": true,
+        "time": "19:32"
       }
     ]
   },
@@ -888,6 +1000,451 @@
         }
       ],
       "next": []
+    },
+    {
+      "id": "th-rand-1",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显随机回复1",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-rand-1",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：噢，今晚一起吃饭吧"
+        }
+      ]
+    },
+    {
+      "id": "th-rand-2",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显随机回复2",
+      "conditions": [
+        {
+          "key": "completed:th-rand-1",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-rand-2",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：干嘛呢"
+        }
+      ]
+    },
+    {
+      "id": "th-rand-3",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显随机回复3",
+      "conditions": [
+        {
+          "key": "completed:th-rand-2",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-rand-3",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：洋人叽里咕噜说什么呢"
+        }
+      ]
+    },
+    {
+      "id": "th-rand-4",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显随机回复4",
+      "conditions": [
+        {
+          "key": "completed:th-rand-3",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-rand-4",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：ᗜ - ᗜ"
+        }
+      ]
+    },
+    {
+      "id": "bg-rand-1",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "杋圭随机回复1",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-bg-rand-1",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "杋圭哥：我们休宁儿找哥干嘛？"
+        }
+      ]
+    },
+    {
+      "id": "bg-rand-2",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "杋圭随机回复2",
+      "conditions": [
+        {
+          "key": "completed:bg-rand-1",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-bg-rand-2",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "杋圭哥：我刚睡醒"
+        }
+      ]
+    },
+    {
+      "id": "bg-rand-3",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "杋圭随机回复3",
+      "conditions": [
+        {
+          "key": "completed:bg-rand-2",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": ""
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-bg-rand-3",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "杋圭哥：休宁呀，为什么总找哥聊天？"
+        }
+      ]
+    },
+    {
+      "id": "th-kw-cat",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显关键词：猫",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "猫"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-kw-cat",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：都说了我不是猫啊"
+        }
+      ]
+    },
+    {
+      "id": "th-kw-diandian",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "太显关键词：点点",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "点点"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-kw-diandian",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "太显🐱🩶：是在叫我吗？"
+        }
+      ]
+    },
+    {
+      "id": "yj-kw-ramen",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "然竣关键词：拉面",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "拉面"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-yj-kw-ramen",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "然竣哥：婉拒了，控制饮食不吃"
+        }
+      ]
+    },
+    {
+      "id": "yj-kw-gangqiugang",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "然竣关键词：港球港",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "港球港"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-yj-kw-gangqiugang",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "然竣哥：啊爷爷！"
+        }
+      ]
+    },
+    {
+      "id": "sb-kw-jiao",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "秀彬关键词：脚",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "脚"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-sb-kw-jiao",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "崔秀彬：这个字不好我们不提"
+        }
+      ]
+    },
+    {
+      "id": "sb-kw-pao",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "秀彬关键词：炮",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "炮"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-sb-kw-pao",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "崔秀彬：这个字不好我们不提"
+        }
+      ]
+    },
+    {
+      "id": "bg-kw-gangqiugang",
+      "type": "event",
+      "event": "variable",
+      "target": "ui:kakao:mymyKktSent",
+      "label": "杋圭关键词：港球港",
+      "conditions": [
+        {
+          "key": "ui:kakao:mymyKktSent",
+          "op": "includes",
+          "value": "港球港"
+        }
+      ],
+      "logic": "and",
+      "once": true,
+      "delayMs": 0,
+      "next": [],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-bg-kw-gangqiugang",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "notify",
+          "value": "杋圭哥：bangbangbangbangbangbang！"
+        }
+      ]
     }
   ],
   "tests": [
