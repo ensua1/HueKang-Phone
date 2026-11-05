@@ -155,7 +155,7 @@ try {
       if (compiled) summary(target, compiled.work, compiled.story);
     }
   } else if (mode === "build") {
-    const main = file || process.env.STORY_FILE || "stories/template/story.json";
+    const main = file || process.env.STORY_FILE || "stories/xiuning-kai/story.json";
     const built = await compileOne(main, { test: true });
     if (!built) throw Error("故事编译失败");
     await mkdir("public", { recursive: true });
