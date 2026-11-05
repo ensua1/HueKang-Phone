@@ -73,12 +73,30 @@ function apply(a: Action, s: Runtime, w: Work) {
         ...(s.messages[a.key] ?? []),
         makeItem({
           id: `event-${a.key}-${s.completed.length}-${s.messages[a.key]?.length ?? 0}`,
-          title: "新消息",
-          sender: w.phone.owner,
+          title: String(a.meta?.thread ?? "新消息"),
           body: String(a.value),
+          sender: w.phone.owner,
+          outgoing: true,
+          time: a.time || s.time || w.phone.time,
         }),
       ];
       break;
+    case "reply": {
+      const item = makeItem({
+        id: `reply-${a.key}-${s.completed.length}-${s.messages[a.key]?.length ?? 0}`,
+        title: String(a.meta?.thread ?? ""),
+        body: String(a.value),
+        sender: a.sender || w.phone.owner,
+        avatar: a.avatar || "",
+        time: a.time || s.time || w.phone.time,
+        outgoing: false,
+        meta: { reply: "true", ...(a.meta ?? {}) },
+      });
+      s.messages[a.key] = [...(s.messages[a.key] ?? []), item];
+      s.appBadges ??= {};
+      s.appBadges[a.key] = (s.appBadges[a.key] ?? 0) + 1;
+      break;
+    }
   }
 }
 function runQueue(
@@ -149,11 +167,13 @@ function runQueue(
     )
       s.endings.push(n.label);
     if (n.type === "choice") {
+      const context = n.target || "";
       for (const id of n.next)
         if (!s.choices.some((c) => c.target === id))
           s.choices.push({
             label: w.nodes.find((n) => n.id === id)?.label ?? id,
             target: id,
+            context,
           });
     } else queue.push(...n.next);
   }
@@ -170,7 +190,8 @@ export function dispatch(
   if (event === "choose") s.choices = [];
   if (event === "openApp" && !s.visited.includes(target))
     s.visited.push(target);
-  if (event === "read" && !s.read.includes(target)) s.read.push(target);
+  if ((event === "read" || event === "order") && !s.read.includes(target))
+    s.read.push(target);
   if (w.mode === "explore") return s;
   const queue = w.nodes
     .filter(

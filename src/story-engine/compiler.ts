@@ -241,6 +241,8 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
     });
     if (n.event === "read" && n.target && !itemIds.has(n.target))
       fail(`events.${i}.target`, "不存在的内容");
+    if (n.event === "order" && n.target && !itemIds.has(n.target))
+      fail(`events.${i}.target`, "不存在的内容");
     if (n.event === "openApp" && n.target && !installed.has(n.target))
       fail(`events.${i}.target`, "事件 App 未安装");
     n.actions.forEach((a, j) => {
@@ -248,6 +250,8 @@ export function compileStory(raw: unknown): { story: Story; work: Work } {
         fail(`events.${i}.actions.${j}.key`, "不存在的内容");
       if (a.type === "message" && !installed.has(a.key))
         fail(`events.${i}.actions.${j}.key`, "消息 App 未安装");
+      if (a.type === "reply" && !installed.has(a.key))
+        fail(`events.${i}.actions.${j}.key`, "回复消息 App 未安装");
       if (a.type === "choice" && !nodeIds.has(a.key))
         fail(`events.${i}.actions.${j}.key`, "选项节点不存在");
     });

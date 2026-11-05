@@ -71,6 +71,7 @@ export function AppIcon({
   custom = "",
   date,
   time,
+  badge = 0,
 }: {
   id: string;
   name?: string;
@@ -78,6 +79,7 @@ export function AppIcon({
   custom?: string;
   date?: string;
   time?: string;
+  badge?: number;
 }) {
   const a = getApp(id);
   const Icon = a.icon;
@@ -97,6 +99,9 @@ export function AppIcon({
         )}
       </span>
       {name && <span className="app-name">{name}</span>}
+      {badge > 0 && (
+        <span className="app-badge">{badge > 99 ? "99+" : badge}</span>
+      )}
     </span>
   );
 }
@@ -273,7 +278,11 @@ function PhoneRuntime({
     setFolder("");
     setPanel("");
     onOpen?.(id);
-    event("openApp", id);
+    const dispatched = dispatch(work, runtimeRef.current, "openApp", id);
+    update({
+      ...dispatched,
+      appBadges: { ...dispatched.appBadges, [id]: 0 },
+    });
   };
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
@@ -475,6 +484,9 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  choices={s.choices}
+                  onChoose={(id) => update(choose(work, s, id))}
+                  onOrder={(id) => event("order", id)}
                 />
               </AppWindow>
             ) : (
@@ -502,6 +514,7 @@ function PhoneRuntime({
                     custom={a.icon}
                     date={s.date || work.phone.date}
                     time={s.time}
+                    badge={s.appBadges?.[a.id] ?? 0}
                   />
                 )}
                 clearApp={(id) =>
@@ -577,11 +590,12 @@ function PhoneRuntime({
               )}
             </div>
           )}
-          {!creator && s.choices.length > 0 && !locked && (
+          {!creator && s.choices.length > 0 && !locked &&
+            s.choices.some((c) => !c.context) && (
             <div className="story-overlay">
               <span className="eyebrow">故事来到一个岔路口</span>
               <h3>你会如何选择？</h3>
-              {s.choices.map((c) => (
+              {s.choices.filter((c) => !c.context).map((c) => (
                 <button
                   key={c.target}
                   onClick={() => update(choose(work, s, c.target))}
@@ -867,6 +881,9 @@ function AppContent({
   onSettings,
   onUi,
   work,
+  choices,
+  onChoose,
+  onOrder,
 }: {
   app: AppPlugin;
   name: string;
@@ -880,6 +897,9 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
+  choices?: { label: string; target: string; context?: string }[];
+  onChoose?: (id: string) => void;
+  onOrder?: (id: string) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -906,6 +926,7 @@ function AppContent({
       return;
     }
     setDetail(i);
+    if (i.kind === "order") return;
     if (!i.password || unlocks.includes(i.id)) onRead(i.id);
   };
   const chats = [...new Set(shown.map((i) => i.title))];
@@ -976,6 +997,17 @@ function AppContent({
               {c}
             </p>
           ))}
+          {detail.kind === "order" && !creator && (
+            <button
+              className="order-button"
+              onClick={() => {
+                onOrder?.(detail.id);
+                setDetail(null);
+              }}
+            >
+              立即下单 · ¥{detail.meta?.price || "—"}
+            </button>
+          )}
         </>
       )}
     </div>
@@ -1000,6 +1032,9 @@ function AppContent({
               onBack={onBack}
               thread={thread}
               onThread={setThread}
+              choices={choices}
+              onChoose={onChoose}
+              onOrder={onOrder}
             />
           </Suspense>
         </div>

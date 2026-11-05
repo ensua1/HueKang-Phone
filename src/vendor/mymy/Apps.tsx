@@ -68,7 +68,12 @@ export function MymyKakao(p: SkinProps) {
     [query, setQuery] = useState(""),
     [menu, setMenu] = useState(false);
   const list = grouped(p.items),
-    messages = [
+    fullDate = (p.virtualTime || "").includes(" ")
+      ? (p.virtualTime || "").split(" ")[0]
+      : "2026-05-20",
+    normalizeTime = (t: string) =>
+      /^\d{1,2}:\d{2}$/.test(t) ? `${fullDate} ${t}` : t,
+    allMessages = [
       ...p.items.filter((i) => i.title === p.thread),
       ...sent.flatMap((raw, index) => {
         try {
@@ -96,6 +101,11 @@ export function MymyKakao(p: SkinProps) {
         }
       }),
     ],
+    messages = allMessages.sort((a, b) =>
+      normalizeTime(a.time)
+        .replace(/[-: ]/g, "")
+        .localeCompare(normalizeTime(b.time).replace(/[-: ]/g, "")),
+    ),
     scroll = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const node = scroll.current;
@@ -155,6 +165,18 @@ export function MymyKakao(p: SkinProps) {
             })}
             {!messages.length && <Blank />}
           </div>
+          {p.choices
+            ?.filter((c) => c.context === `inline:kakao:${p.thread}`)
+            .map((c) => (
+              <div className="kzinline-choices" key={c.target}>
+                <button
+                  className="kzinline-choice"
+                  onClick={() => p.onChoose?.(c.target)}
+                >
+                  {c.label}
+                </button>
+              </div>
+            ))}
           <form
             className="kzinp"
             onSubmit={(e) => {

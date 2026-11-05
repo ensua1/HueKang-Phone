@@ -628,3 +628,22 @@
   width: 25px;
   height: 25px;
 }
+.mymy-ui .kzinline-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px 4px;
+}
+.mymy-ui .kzinline-choice {
+  background: #e8f3ff;
+  color: #1b6dd6;
+  border: 1px solid #bcd9f7;
+  border-radius: 18px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.mymy-ui .kzinline-choice:hover {
+  background: #d0ebff;
+}

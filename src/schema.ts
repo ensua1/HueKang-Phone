@@ -50,14 +50,20 @@ export const actionSchema = z.object({
     "hide",
     "notification",
     "message",
+    "reply",
     "time",
     "ending",
     "choice",
     "clue",
     "call",
+    "order",
   ]),
   key: z.string(),
   value: z.union([z.string(), z.number(), z.boolean()]),
+  sender: z.string().optional(),
+  avatar: z.string().optional(),
+  time: z.string().optional(),
+  meta: z.record(z.string().max(60), z.string().max(2000)).optional(),
 });
 export type Action = z.infer<typeof actionSchema>;
 export const nodeSchema = z.object({
@@ -152,8 +158,9 @@ export type Runtime = {
   completed: string[];
   notifications: string[];
   endings: string[];
-  choices: { label: string; target: string }[];
+  choices: { label: string; target: string; context?: string }[];
   messages: Record<string, Item[]>;
+  appBadges: Record<string, number>;
   time: string;
   trace: string[];
 };
@@ -178,6 +185,7 @@ export function initialRuntime(w: Work): Runtime {
     endings: [],
     choices: [],
     messages: {},
+    appBadges: {},
     time: w.phone.time,
     trace: [],
   };
