@@ -647,3 +647,16 @@
 .mymy-ui .kzinline-choice:hover {
   background: #d0ebff;
 }
+.mymy-ui .kzmsg-in {
+  animation: kzmsg-fadein 0.3s ease both;
+}
+@keyframes kzmsg-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

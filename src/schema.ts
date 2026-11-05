@@ -157,6 +157,7 @@ export type Runtime = {
   hidden: string[];
   completed: string[];
   notifications: string[];
+  notificationMeta?: { app?: string; thread?: string }[];
   endings: string[];
   choices: { label: string; target: string; context?: string }[];
   messages: Record<string, Item[]>;
@@ -182,6 +183,7 @@ export function initialRuntime(w: Work): Runtime {
     hidden: [],
     completed: [],
     notifications: [],
+    notificationMeta: [],
     endings: [],
     choices: [],
     messages: {},

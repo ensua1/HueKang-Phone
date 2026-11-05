@@ -45,6 +45,11 @@ function apply(a: Action, s: Runtime, w: Work) {
       break;
     case "notification":
       s.notifications.push(String(a.value));
+      s.notificationMeta ??= [];
+      s.notificationMeta.push({
+        app: a.meta?.app,
+        thread: a.meta?.thread,
+      });
       break;
     case "call":
       s.notifications.push(`${String(a.value)} 来电`);
@@ -122,6 +127,22 @@ function runQueue(
           ? !conditions.every(Boolean)
           : conditions.every(Boolean);
     if (!pass) continue;
+    const replyActions = n.actions.filter((a) => a.type === "reply");
+    if (replyActions.length) {
+      const pool = replyActions[0].meta?.randomPool;
+      if (
+        pool &&
+        w.nodes.some(
+          (nn) =>
+            nn.actions.some(
+              (aa) => aa.type === "reply" && aa.meta?.randomPool === pool,
+            ) &&
+            s.completed.includes(nn.id) &&
+            nn.id !== id,
+        )
+      )
+        continue;
+    }
     if (n.type === "delay" && !resuming.has(id)) {
       s.scheduled ??= [];
       if (!s.scheduled.some((t) => t.nodeId === id))

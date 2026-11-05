@@ -131,10 +131,11 @@ export function MymyKakao(p: SkinProps) {
                 <div
                   key={m.id}
                   className={
-                    "kzm " +
+                    "kzm kzmsg-in " +
                     (m.outgoing ? "kzmy" : "kzot") +
                     (run.first ? " first" : "")
                   }
+                  style={{ animationDelay: `${Math.min(i * 0.15, 1.5)}s` }}
                 >
                   {!m.outgoing && run.first && (
                     <>

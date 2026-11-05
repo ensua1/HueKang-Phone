@@ -31,17 +31,14 @@ async function openKakaoThread(page: Page, threadName: string) {
 
 test("休宁凯：主线选择流程——然竣报信到杋圭回国", async ({ page }) => {
   await unlockPhone(page);
-  await openKakaoThread(page, "然竣哥");
 
-  // 读然竣的消息"你男朋友的前男友要回国了"
-  await expect(page.locator(".kzbub").first()).toBeVisible();
-  await page
-    .locator(".kzbub")
-    .filter({ hasText: "前男友要回国了" })
-    .first()
-    .click();
+  // start 时然竣发来 KKT 消息 + 顶部 banner
+  await expect(page.locator(".device-banner")).toBeVisible({ timeout: 10000 });
+  await expect(page.locator(".device-banner")).toContainText("然竣哥");
+  // 点击 banner 跳转到然竣对话框
+  await page.locator(".device-banner").click();
 
-  // 第一轮内联选项出现在输入框上方
+  // 进入然竣对话框后，回复选项直接出现在输入框上方（不需点气泡）
   await expect(page.locator(".kzinline-choice").first()).toBeVisible({
     timeout: 8000,
   });

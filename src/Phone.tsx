@@ -146,6 +146,11 @@ function PhoneRuntime({
   const [recent, setRecent] = useState<string[]>([]);
   const appSnapshots = useRef(new Map<string, HTMLElement>());
   const [banner, setBanner] = useState("");
+  const [bannerMeta, setBannerMeta] = useState<{
+    app?: string;
+    thread?: string;
+  }>({});
+  const [pendingThread, setPendingThread] = useState("");
   const noticesSeen = useRef(0);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
@@ -290,6 +295,7 @@ function PhoneRuntime({
     if (!work.phone.passcode || pin === work.phone.passcode) {
       setLocked(false);
       setPinOpen(false);
+      noticesSeen.current = 0;
       event("password", pin);
     } else {
       setPinError("密码不正确");
@@ -305,11 +311,11 @@ function PhoneRuntime({
     const count = s.notifications.length;
     if (!locked && work.phone.notifications && count > noticesSeen.current) {
       setBanner(s.notifications.at(-1) || "");
+      setBannerMeta(s.notificationMeta?.at(-1) ?? {});
       const timer = setTimeout(() => setBanner(""), 4500);
       noticesSeen.current = count;
       return () => clearTimeout(timer);
     }
-    noticesSeen.current = count;
   }, [s.notifications.length, locked, work.phone.notifications]);
   const dismissNotice = (index: number) =>
     update({
@@ -445,7 +451,7 @@ function PhoneRuntime({
               />
             ) : app && app !== "appstore" ? (
               <AppWindow
-                key={app}
+                key={app + (pendingThread ? ":" + pendingThread : "")}
                 className={`app-screen engine-${plugin.engine} skin-${app}`}
                 creator={creator}
                 origin={launchOrigin}
@@ -461,10 +467,14 @@ function PhoneRuntime({
                   ]}
                   creator={creator}
                   state={s}
+                  initialThread={pendingThread}
                   onRead={(id) => event("read", id)}
                   onEdit={(item) => onEdit?.(app, item)}
                   onAdd={() => onAdd?.(app)}
-                  onBack={() => setApp("")}
+                  onBack={() => {
+                    setPendingThread("");
+                    setApp("");
+                  }}
                   onSettings={onSettings}
                   onUi={(key, value) => {
                     const current = runtimeRef.current;
@@ -697,7 +707,11 @@ function PhoneRuntime({
               className="device-banner"
               onClick={() => {
                 setBanner("");
-                setPanel("notification");
+                if (bannerMeta.app) {
+                  const targetApp = bannerMeta.app;
+                  setPendingThread(bannerMeta.thread || "");
+                  open(targetApp);
+                } else setPanel("notification");
               }}
             >
               <AppIcon
@@ -874,6 +888,7 @@ function AppContent({
   items,
   creator,
   state,
+  initialThread,
   onRead,
   onEdit,
   onAdd,
@@ -890,6 +905,7 @@ function AppContent({
   items: Item[];
   creator: boolean;
   state: Runtime;
+  initialThread?: string;
   onRead: (id: string) => void;
   onEdit: (item: Item) => void;
   onAdd: () => void;
@@ -902,7 +918,7 @@ function AppContent({
   onOrder?: (id: string) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
-  const [thread, setThread] = useState("");
+  const [thread, setThread] = useState(initialThread || "");
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
