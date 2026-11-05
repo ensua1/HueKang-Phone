@@ -1,0 +1,960 @@
+{
+  "scriptVersion": 1,
+  "id": "xiuning-kai",
+  "title": "休宁凯",
+  "description": "崔杋圭回国那天，休宁凯手机里的五人关系开始重新洗牌。一个关于说不出口的喜欢、和趁人之危的暧昧的故事。",
+  "revision": 1,
+  "phone": {
+    "owner": "休宁凯",
+    "passcode": "0205",
+    "date": "2026-05-20",
+    "time": "19:30",
+    "battery": 78,
+    "network": "5G",
+    "wallpaper": "sage",
+    "theme": "light"
+  },
+  "installedApps": [
+    "phone",
+    "messages",
+    "contacts",
+    "photos",
+    "camera",
+    "safari",
+    "notes",
+    "calendar",
+    "clock",
+    "reminders",
+    "files",
+    "mail",
+    "music",
+    "maps",
+    "weather",
+    "health",
+    "wallet",
+    "find",
+    "calculator",
+    "settings",
+    "appstore",
+    "kakao",
+    "instagram",
+    "tiktok",
+    "twitter",
+    "youtube",
+    "spotify",
+    "netflix",
+    "forum",
+    "threads",
+    {
+      "id": "delivery",
+      "name": "休闲store",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    }
+  ],
+  "contacts": [
+    {
+      "id": "taehyun",
+      "name": "太显🐱🩶",
+      "phone": "010-2005-0205",
+      "bio": "会计师。认识多年的好朋友。"
+    },
+    {
+      "id": "yeonjun",
+      "name": "然竣哥",
+      "phone": "010-1234-5678",
+      "bio": "舞者兼模特。什么都爱嘴一句。"
+    },
+    {
+      "id": "soobin",
+      "name": "崔秀彬",
+      "phone": "010-9876-5432",
+      "bio": "咖啡店店长。话不多但句句到位。"
+    },
+    {
+      "id": "beomgyu",
+      "name": "杋圭哥",
+      "phone": "010-7777-8888",
+      "bio": "实用音乐科。乐队成员。刚从国外回来。"
+    }
+  ],
+  "chats": [
+    {
+      "id": "kkt-yeonjun",
+      "app": "kakao",
+      "title": "然竣哥",
+      "participants": [
+        "yeonjun",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "kkt-yj-1",
+          "body": "你男朋友的前男友要回国了",
+          "senderId": "yeonjun",
+          "time": "2026-05-20 19:28"
+        }
+      ]
+    },
+    {
+      "id": "kkt-taehyun",
+      "app": "kakao",
+      "title": "太显🐱🩶",
+      "participants": [
+        "taehyun",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "kkt-th-1",
+          "body": "kk 今晚有空吗",
+          "senderId": "taehyun",
+          "time": "2026-05-20 19:10"
+        },
+        {
+          "id": "kkt-th-2",
+          "body": "想吃巧克力海螺面包 好久没吃了",
+          "senderId": "taehyun",
+          "time": "2026-05-20 19:11"
+        }
+      ]
+    },
+    {
+      "id": "kkt-soobin",
+      "app": "kakao",
+      "title": "崔秀彬",
+      "participants": [
+        "soobin",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "kkt-sb-1",
+          "body": "今天新到的豆子 来尝尝",
+          "senderId": "soobin",
+          "time": "2026-05-20 18:00"
+        }
+      ]
+    },
+    {
+      "id": "kkt-beomgyu",
+      "app": "kakao",
+      "title": "杋圭哥",
+      "participants": [
+        "beomgyu",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "kkt-bg-1",
+          "body": "长期不在国内 kk 还好吗",
+          "senderId": "beomgyu",
+          "time": "2026-05-20 12:00"
+        }
+      ]
+    },
+    {
+      "id": "kkt-group-men",
+      "app": "kakao",
+      "title": "西八真男人",
+      "participants": [
+        "taehyun",
+        "beomgyu",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "kkt-group-1",
+          "body": "这名字是谁起的",
+          "senderId": "owner",
+          "time": "2026-05-18 22:00"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "notes": [
+      {
+        "id": "note-people",
+        "title": "五个人",
+        "body": "休宁凯、姜太显、崔杋圭、崔然竣、崔秀彬。同一所大学毕业。\n\n太显和我认识很多年了。杋圭和我同专业同乐队，太显常来看我们演出。\n\n杋圭出国以后，太显和我越来越近。然竣哥和秀彬哥都以为我快把太显追到手了。",
+        "kind": "note",
+        "folder": "私人",
+        "time": "2026-05-19 23:00"
+      },
+      {
+        "id": "note-band",
+        "title": "乐队排练记录",
+        "body": "杋圭吉他，我键盘。实用音乐科的两个人。\n\n杋圭回国了，要不要再约一次排练。",
+        "kind": "note",
+        "folder": "工作",
+        "time": "2026-05-18 20:00"
+      }
+    ],
+    "photos": [
+      {
+        "id": "photo-stage",
+        "title": "最后一次演出",
+        "body": "杋圭出国前的最后一场。太显在台下第一排。",
+        "kind": "image",
+        "folder": "演出",
+        "time": "2025-08-10 22:00"
+      },
+      {
+        "id": "photo-three",
+        "title": "三个人",
+        "body": "太显、杋圭、我。那天还以为会一直这样。",
+        "kind": "image",
+        "folder": "合照",
+        "hidden": true,
+        "time": "2025-08-10 23:00"
+      }
+    ],
+    "calendar": [
+      {
+        "id": "cal-beomgyu-back",
+        "title": "杋圭回国",
+        "body": "杋圭今天落地首尔。",
+        "kind": "event",
+        "time": "2026-05-20 09:00"
+      }
+    ],
+    "phone": [
+      {
+        "id": "call-missed-beomgyu",
+        "title": "杋圭哥",
+        "body": "未接来电",
+        "kind": "call",
+        "outgoing": false,
+        "time": "2026-05-20 11:55"
+      }
+    ],
+    "delivery": [
+      {
+        "id": "store-bread-choco",
+        "title": "巧克力海螺面包",
+        "body": "drink & food · 寄到太显家会收到太显的消息",
+        "kind": "order",
+        "folder": "drink&food",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "6500",
+          "rating": "4.8",
+          "duration": "20分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-eggs",
+        "title": "鸡蛋一打",
+        "body": "drink & food · 寄到太显家",
+        "kind": "order",
+        "folder": "drink&food",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "3000",
+          "rating": "5.0",
+          "duration": "15分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-grape",
+        "title": "葡萄汁",
+        "body": "drink & food · 寄到太显家",
+        "kind": "order",
+        "folder": "drink&food",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "4500",
+          "rating": "4.5",
+          "duration": "20分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-tart",
+        "title": "蛋挞",
+        "body": "drink & food · 寄到太显家",
+        "kind": "order",
+        "folder": "drink&food",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "5500",
+          "rating": "4.7",
+          "duration": "20分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-macchiato",
+        "title": "焦糖玛奇朵",
+        "body": "drink & food · 寄到太显家",
+        "kind": "order",
+        "folder": "drink&food",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "6000",
+          "rating": "4.9",
+          "duration": "25分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-cards-heart",
+        "title": "德国心脏卡牌",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "12000",
+          "rating": "4.6",
+          "duration": "30分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-poker",
+        "title": "扑克牌",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "5000",
+          "rating": "4.0",
+          "duration": "30分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-condom",
+        "title": "套",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "8000",
+          "rating": "5.0",
+          "duration": "30分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-lube",
+        "title": "润滑液",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "9000",
+          "rating": "5.0",
+          "duration": "30分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-cat-outfit",
+        "title": "小猫装扮",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "15000",
+          "rating": "4.8",
+          "duration": "35分钟",
+          "address": "太显家"
+        }
+      },
+      {
+        "id": "store-blind-box",
+        "title": "玩偶随机礼盒",
+        "body": "娱乐 · 寄到太显家",
+        "kind": "order",
+        "folder": "娱乐",
+        "time": "2026-05-20 19:15",
+        "meta": {
+          "price": "11000",
+          "rating": "4.4",
+          "duration": "35分钟",
+          "address": "太显家"
+        }
+      }
+    ],
+    "kakao": [
+      {
+        "id": "kkt-th-reply-bread",
+        "title": "太显🐱🩶",
+        "body": "你怎么知道我今天想吃这个",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-eggs",
+        "title": "太显🐱🩶",
+        "body": "怎么给我买鸡蛋？\n知道了 今晚来我家吃吧",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-grape",
+        "title": "太显🐱🩶",
+        "body": "kk 寄错了吧？",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-tart",
+        "title": "太显🐱🩶",
+        "body": "下次给我买草莓大福吧\n这个你自己留着吃",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-macchiato",
+        "title": "太显🐱🩶",
+        "body": "今天喝过一杯了欸\n不过我不介意再喝",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-cards",
+        "title": "太显🐱🩶",
+        "body": "你再作弊我会再把这扔了",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-poker",
+        "title": "太显🐱🩶",
+        "body": "啊…我不是魔术师了\n现在是会计师",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-condom",
+        "title": "太显🐱🩶",
+        "body": "休宁凯你搞什么…\n压力很大吗？\n要我帮你？\n还是我理解错了？",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-lube",
+        "title": "太显🐱🩶",
+        "body": "？？？？\n那个..我不是故意拆开的\n等一下？收件人是我啊\n休宁凯？你？！",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-cat",
+        "title": "太显🐱🩶",
+        "body": "kk 休宁呀\n你喜欢的东西好奇怪哦",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-th-reply-blindbox",
+        "title": "太显🐱🩶",
+        "body": "你的公仔又寄到我这了…\n你来拿吗？",
+        "sender": "太显🐱🩶",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      },
+      {
+        "id": "kkt-group-beomgyu-back",
+        "title": "西八真男人",
+        "body": "我回来了！",
+        "sender": "杋圭哥",
+        "hidden": true,
+        "time": "2026-05-20 19:30"
+      }
+    ]
+  },
+  "variables": {
+    "knowsReturn": false,
+    "groupNotified": false
+  },
+  "events": [
+    {
+      "id": "start",
+      "type": "start",
+      "event": "start",
+      "label": "故事开始",
+      "next": [
+        "open-kakao-hint"
+      ]
+    },
+    {
+      "id": "open-kakao-hint",
+      "type": "event",
+      "event": "openApp",
+      "target": "kakao",
+      "label": "打开KakaoTalk",
+      "next": []
+    },
+    {
+      "id": "read-yeonjun-1",
+      "type": "event",
+      "event": "read",
+      "target": "kkt-yj-1",
+      "label": "读然竣消息",
+      "actions": [
+        {
+          "type": "notification",
+          "value": "然竣哥：你男朋友的前男友要回国了",
+          "key": "notify"
+        }
+      ],
+      "next": [
+        "choice-reply-1"
+      ]
+    },
+    {
+      "id": "choice-reply-1",
+      "type": "choice",
+      "label": "如何回复然竣",
+      "next": [
+        "reply-1a",
+        "reply-1b"
+      ]
+    },
+    {
+      "id": "reply-1a",
+      "type": "event",
+      "event": "choose",
+      "target": "reply-1a",
+      "label": "哥…我说过了还不是男朋友..",
+      "actions": [
+        {
+          "type": "notification",
+          "value": "然竣哥：我以为你每天显化快成功了",
+          "key": "notify"
+        }
+      ],
+      "next": [
+        "yeonjun-followup"
+      ]
+    },
+    {
+      "id": "reply-1b",
+      "type": "event",
+      "event": "choose",
+      "target": "reply-1b",
+      "label": "(°_°)？",
+      "actions": [
+        {
+          "type": "notification",
+          "value": "然竣哥：我以为你每天显化快成功了",
+          "key": "notify"
+        }
+      ],
+      "next": [
+        "yeonjun-followup"
+      ]
+    },
+    {
+      "id": "yeonjun-followup",
+      "type": "event",
+      "event": "choose",
+      "target": "yeonjun-followup",
+      "label": "然竣追问",
+      "actions": [
+        {
+          "type": "notification",
+          "value": "然竣哥：还有你怎么不好奇我说的是谁",
+          "key": "notify"
+        }
+      ],
+      "next": [
+        "choice-reply-2"
+      ]
+    },
+    {
+      "id": "choice-reply-2",
+      "type": "choice",
+      "label": "怎么回",
+      "next": [
+        "reply-2a",
+        "reply-2b"
+      ]
+    },
+    {
+      "id": "reply-2a",
+      "type": "event",
+      "event": "choose",
+      "target": "reply-2a",
+      "label": "我知道了",
+      "actions": [
+        {
+          "type": "variable",
+          "key": "knowsReturn",
+          "value": true
+        }
+      ],
+      "next": [
+        "beomgyu-group-msg"
+      ]
+    },
+    {
+      "id": "reply-2b",
+      "type": "event",
+      "event": "choose",
+      "target": "reply-2b",
+      "label": "还能有谁",
+      "actions": [
+        {
+          "type": "variable",
+          "key": "knowsReturn",
+          "value": true
+        }
+      ],
+      "next": [
+        "beomgyu-group-msg"
+      ]
+    },
+    {
+      "id": "beomgyu-group-msg",
+      "type": "event",
+      "event": "choose",
+      "target": "beomgyu-group-msg",
+      "label": "群聊弹出",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-group-beomgyu-back",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "西八真男人：杋圭哥：我回来了！",
+          "key": "notify"
+        },
+        {
+          "type": "variable",
+          "key": "groupNotified",
+          "value": true
+        }
+      ],
+      "next": [
+        "ending-wait"
+      ]
+    },
+    {
+      "id": "ending-wait",
+      "type": "ending",
+      "label": "杋圭回国了，故事才刚开始。",
+      "actions": [
+        {
+          "type": "ending",
+          "value": "杋圭回国了，故事才刚开始。",
+          "key": "ending"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-bread-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-bread-choco",
+      "label": "买了巧克力海螺面包",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-bread",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：你怎么知道我今天想吃这个",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-eggs-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-eggs",
+      "label": "买了鸡蛋一打",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-eggs",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：怎么给我买鸡蛋？知道了 今晚来我家吃吧",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-grape-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-grape",
+      "label": "买了葡萄汁",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-grape",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：kk 寄错了吧？",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-tart-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-tart",
+      "label": "买了蛋挞",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-tart",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：下次给我买草莓大福吧 这个你自己留着吃",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-macchiato-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-macchiato",
+      "label": "买了焦糖玛奇朵",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-macchiato",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：今天喝过一杯了欸 不过我不介意再喝",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-cards-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-cards-heart",
+      "label": "买了德国心脏卡牌",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-cards",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：你再作弊我会再把这扔了",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-poker-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-poker",
+      "label": "买了扑克牌",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-poker",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：啊…我不是魔术师了 现在是会计师",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-condom-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-condom",
+      "label": "买了套",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-condom",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：休宁凯你搞什么… 压力很大吗？ 要我帮你？ 还是我理解错了？",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-lube-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-lube",
+      "label": "买了润滑液",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-lube",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：？？？？ 那个..我不是故意拆开的 等一下？收件人是我啊 休宁凯？你？！",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-cat-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-cat-outfit",
+      "label": "买了小猫装扮",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-cat",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：kk 休宁呀 你喜欢的东西好奇怪哦",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "store-blindbox-trigger",
+      "type": "event",
+      "event": "read",
+      "target": "store-blind-box",
+      "label": "买了玩偶随机礼盒",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "kkt-th-reply-blindbox",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "value": "太显🐱🩶：你的公仔又寄到我这了… 你来拿吗？",
+          "key": "notify"
+        }
+      ],
+      "next": []
+    }
+  ],
+  "tests": [
+    {
+      "name": "主线：然竣报信到杋圭回国",
+      "steps": [
+        {
+          "event": "openApp",
+          "target": "kakao"
+        },
+        {
+          "event": "read",
+          "target": "kkt-yj-1"
+        },
+        {
+          "choose": "reply-1a"
+        },
+        {
+          "choose": "reply-2a"
+        }
+      ],
+      "ending": "杋圭回国了，故事才刚开始。",
+      "expectUnlocked": [
+        "kkt-group-beomgyu-back"
+      ]
+    },
+    {
+      "name": "主线：另一个选择也能到结局",
+      "steps": [
+        {
+          "event": "read",
+          "target": "kkt-yj-1"
+        },
+        {
+          "choose": "reply-1b"
+        },
+        {
+          "choose": "reply-2b"
+        }
+      ],
+      "ending": "杋圭回国了，故事才刚开始。",
+      "expectUnlocked": [
+        "kkt-group-beomgyu-back"
+      ]
+    },
+    {
+      "name": "休闲store：买面包触发太显回复",
+      "steps": [
+        {
+          "event": "read",
+          "target": "kkt-yj-1"
+        },
+        {
+          "choose": "reply-1a"
+        },
+        {
+          "choose": "reply-2a"
+        },
+        {
+          "event": "read",
+          "target": "store-bread-choco"
+        }
+      ],
+      "ending": "杋圭回国了，故事才刚开始。",
+      "expectUnlocked": [
+        "kkt-th-reply-bread"
+      ]
+    }
+  ]
+}

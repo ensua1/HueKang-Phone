@@ -12,6 +12,7 @@ export default defineConfig({
     "reference-next.spec.ts",
     "original-icons.spec.ts",
     "huan-nan-tian.spec.ts",
+    "xiuning-kai.spec.ts",
   ],
   timeout: 30000,
   use: {

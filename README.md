@@ -53,7 +53,7 @@ npm run preview
 
 默认故事位于 `stories/template/story.json`；纯空白手机位于 `stories/blank/story.json`，可用 `/?template=blank` 查看。你可以替换演示数据，也可以通过环境变量 `STORY_FILE` 选择其他作品。故事数据与界面代码分离，作品运行时不需要 AI 在线。
 
-`stories/` 下的每个故事目录都会在构建时产出一份独立作品文件。除默认入口外，可用 `/?story=<目录名>` 打开，例如仓库自带的《回南天》示例为 `/?story=huan-nan-tian`。新增故事目录后无需改动手机 UI。
+`stories/` 下的每个故事目录都会在构建时产出一份独立作品文件。除默认入口外，可用 `/?story=<目录名>` 打开，例如仓库自带的《回南天》示例为 `/?story=huan-nan-tian`、《休宁凯》示例为 `/?story=xiuning-kai`。新增故事目录后无需改动手机 UI。
 
 ## 演示与截图
 
