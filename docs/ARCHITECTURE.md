@@ -2,7 +2,9 @@
 
 正式入口 index.html → src/runtime/StoryPlayer.tsx → Phone。构建只包含玩家入口，不暴露可视化创作器。原有作者模块保留兼容，但不进入正式依赖图。
 
-stories/template/story.json 是可替换的中性演示；stories/blank/story.json 是纯空白起点。scripts/story.mjs 通过 src/story-engine/compiler.ts 编译为 Work v1，校验稳定 ID、引用、安全素材和剧情图。testStory.ts 重放测试路径，检查密码、隐藏内容和结局。
+stories/template/story.json 是可替换的中性演示；stories/blank/story.json 是纯空白起点；stories/ 下其余目录是并存的其他作品。scripts/story.mjs 通过 src/story-engine/compiler.ts 编译为 Work v1，校验稳定 ID、引用、安全素材和剧情图。testStory.ts 重放测试路径，检查密码、隐藏内容和结局。
+
+story:validate 与 story:test 会遍历 stories/ 下的全部故事。story:build 除默认的 work.json、test-work.json 和 blank-work.json 外，还为其他故事目录各产出一份 public/stories/<目录名>.json，运行时用 ?story=<目录名> 选择，默认入口与 ?preview=test、?template=blank 行为不变。
 
 src/engine.ts 是纯状态转移引擎。Work 在游玩中保持不可变，Runtime 保存玩家进度、事件、来电、通知和选择。src/persistence.ts 使用 IndexedDB，作者数据与玩家存档分表存储。
 

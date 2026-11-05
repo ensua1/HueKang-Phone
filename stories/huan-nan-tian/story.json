@@ -1,0 +1,1011 @@
+{
+  "scriptVersion": 1,
+  "id": "huan-nan-tian",
+  "title": "回南天",
+  "description": "南方三月的回南天，便利店夜班店员陆晚收到旧友安的短信。密码藏在聊天里，备忘录和相册各有一道锁，一通凌晨的来电等着她决定要不要出门。",
+  "revision": 1,
+  "phone": {
+    "owner": "陆晚",
+    "date": "2026-03-14",
+    "time": "22:05",
+    "passcode": "",
+    "wallpaper": "sage",
+    "theme": "light"
+  },
+  "installedApps": [
+    "phone",
+    "messages",
+    "contacts",
+    "photos",
+    "notes",
+    "calendar",
+    "clock",
+    "reminders",
+    "files",
+    "mail",
+    "music",
+    "safari",
+    "maps",
+    "weather",
+    "health",
+    "settings",
+    "appstore",
+    "camera",
+    "calculator",
+    "find",
+    "wallet",
+    "wechat",
+    "qq",
+    "telegram",
+    "bilibili",
+    "weibo",
+    "redbook",
+    "douyin",
+    "netease",
+    "taobao",
+    "alipay",
+    "delivery",
+    "youtube",
+    "whatsapp",
+    "instagram",
+    "tiktok",
+    "twitter",
+    "discord",
+    "line",
+    "facebook",
+    "messenger",
+    "reddit",
+    "spotify",
+    "netflix",
+    "pinterest",
+    "snapchat",
+    "kakao",
+    "threads",
+    "forum"
+  ],
+  "contacts": [
+    {
+      "id": "an",
+      "name": "安",
+      "phone": "13800001001",
+      "bio": "旧友。北方人，说话很慢。"
+    },
+    {
+      "id": "zhou",
+      "name": "老周",
+      "phone": "13800001002",
+      "bio": "便利店店长。钥匙在他那里。"
+    },
+    {
+      "id": "yu",
+      "name": "小雨",
+      "phone": "13800001003",
+      "bio": "同事。白班。"
+    },
+    {
+      "id": "eleven",
+      "name": "十一",
+      "phone": "13800001004",
+      "bio": "很久没有联系的人。"
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat-an-sms",
+      "app": "messages",
+      "title": "安",
+      "participants": [
+        "an",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "sms-an-1",
+          "body": "你那边还在下雨吗？我这边已经停了，但玻璃上全是水。",
+          "senderId": "an"
+        },
+        {
+          "id": "sms-an-2",
+          "body": "便利店门口那把伞我先拿走了，等你回来我再放回去。",
+          "senderId": "an"
+        },
+        {
+          "id": "sms-an-code",
+          "body": "备忘录你还锁着吧。老规矩，第一次去看海的日子：0314。",
+          "senderId": "an"
+        },
+        {
+          "id": "sms-an-3",
+          "body": "别问我为什么突然说这个。雨季之前把该说的话说完。",
+          "senderId": "owner"
+        }
+      ]
+    },
+    {
+      "id": "chat-zhou-wechat",
+      "app": "wechat",
+      "title": "老周",
+      "participants": [
+        "zhou",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "wx-zhou-1",
+          "body": "今晚雨大，货架那几箱水先别动，等小雨白班来搬。",
+          "senderId": "zhou"
+        },
+        {
+          "id": "wx-zhou-2",
+          "body": "储物柜第三格的伞是谁的？老位置的那把？",
+          "senderId": "owner"
+        },
+        {
+          "id": "wx-zhou-3",
+          "body": "有人下午来寄存过，说是雨停就来取。你要是见到他，说一声。",
+          "senderId": "zhou"
+        }
+      ]
+    },
+    {
+      "id": "chat-group-qq",
+      "app": "qq",
+      "title": "夜班搭子（3）",
+      "participants": [
+        "yu",
+        "zhou",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "qq-group-1",
+          "body": "今晚谁在？我带热汤。",
+          "senderId": "yu"
+        },
+        {
+          "id": "qq-group-2",
+          "body": "我在。汤别太烫，陆晚胃不好。",
+          "senderId": "zhou"
+        },
+        {
+          "id": "qq-group-3",
+          "body": "那我十点到，先把热饮柜补满。",
+          "senderId": "owner"
+        }
+      ]
+    },
+    {
+      "id": "chat-eleven-tg",
+      "app": "telegram",
+      "title": "十一",
+      "participants": [
+        "eleven",
+        "owner"
+      ],
+      "messages": [
+        {
+          "id": "tg-eleven-1",
+          "body": "回南天适合把话说完。也适合什么都不说。",
+          "senderId": "eleven"
+        },
+        {
+          "id": "tg-eleven-2",
+          "body": "旧照片我留在旧手机里了，你那台应该还有备份。",
+          "senderId": "eleven"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "notes": [
+      {
+        "id": "note-today",
+        "title": "今天",
+        "body": "晚十点到早六点。雨大，伞不够。先把热饮柜补满，再盘一下库存。",
+        "kind": "note",
+        "folder": "工作"
+      },
+      {
+        "id": "note-shift",
+        "title": "三月排班",
+        "body": "小雨：1 号到 15 号白班。老周：轮休。我：16 号到月底夜班。",
+        "kind": "note",
+        "folder": "工作"
+      },
+      {
+        "id": "note-hideout",
+        "title": "回南天备忘",
+        "body": "玻璃上的水今天又下来了。\n三号站台，伞在储物柜第三格。\n别放太久，塑料会脆。\n——如果你真的看到这一条，就当是雨季里的一句回信。",
+        "kind": "note",
+        "folder": "私人",
+        "hidden": true,
+        "password": "0314"
+      }
+    ],
+    "photos": [
+      {
+        "id": "photo-counter",
+        "title": "凌晨三点的柜台",
+        "body": "热水机的光是暖黄色的。外面全湿了。",
+        "kind": "image",
+        "folder": "日常",
+        "favorite": true
+      },
+      {
+        "id": "photo-rain",
+        "title": "窗上的水",
+        "body": "像有人在外面用指尖写字，写完就散。",
+        "kind": "image",
+        "folder": "日常"
+      },
+      {
+        "id": "photo-hidden",
+        "title": "雨里的三号站台",
+        "body": "安拍的。那天也下着雨，只是没有这么闷。站台的应急灯还亮着。",
+        "kind": "image",
+        "folder": "安",
+        "hidden": true
+      }
+    ],
+    "phone": [
+      {
+        "id": "call-an",
+        "title": "安",
+        "body": "未接来电 · 21:40",
+        "kind": "call",
+        "meta": {
+          "number": "13800001001",
+          "status": "未接"
+        }
+      },
+      {
+        "id": "call-zhou",
+        "title": "老周",
+        "body": "已接 · 19:12",
+        "kind": "call",
+        "meta": {
+          "number": "13800001002",
+          "status": "已接"
+        }
+      },
+      {
+        "id": "voicemail-an",
+        "title": "安的语音留言",
+        "body": "……如果你听到这个，说明我还在那趟车上。别急着回我。",
+        "kind": "audio",
+        "folder": "语音信箱"
+      }
+    ],
+    "calendar": [
+      {
+        "id": "cal-shift",
+        "title": "夜班 22:00 - 06:00",
+        "body": "城南便利店",
+        "kind": "event",
+        "meta": {
+          "location": "城南便利店"
+        }
+      },
+      {
+        "id": "cal-meet",
+        "title": "和三号站台",
+        "body": "雨停之前",
+        "kind": "event",
+        "meta": {
+          "location": "三号站台"
+        }
+      }
+    ],
+    "clock": [
+      {
+        "id": "clock-alarm",
+        "title": "起床",
+        "body": "白班交接",
+        "kind": "note",
+        "meta": {
+          "clock": "06:30"
+        }
+      },
+      {
+        "id": "clock-north",
+        "title": "北方",
+        "body": "安那边",
+        "kind": "note",
+        "meta": {
+          "clock": "21:45",
+          "city": "北方"
+        }
+      }
+    ],
+    "reminders": [
+      {
+        "id": "rem-umbrella",
+        "title": "把三号站台的伞拿回来",
+        "body": "寄存的人说雨停就来取。别让人等太久。",
+        "kind": "note",
+        "folder": "今天"
+      },
+      {
+        "id": "rem-water",
+        "title": "买两瓶常温水",
+        "body": "老周的胃不好，冰的别买。",
+        "kind": "note",
+        "folder": "明天"
+      }
+    ],
+    "files": [
+      {
+        "id": "file-umbrella",
+        "title": "雨伞借用表",
+        "body": "谁借走了哪一把、放在哪个储物柜。",
+        "kind": "file",
+        "folder": "工作",
+        "meta": {
+          "extension": "xlsx",
+          "size": "38 KB"
+        }
+      },
+      {
+        "id": "file-old-photo",
+        "title": "站台旧照片",
+        "body": "从旧手机里导出来的备份。",
+        "kind": "file",
+        "folder": "下载",
+        "meta": {
+          "extension": "jpg",
+          "size": "2.4 MB"
+        }
+      }
+    ],
+    "mail": [
+      {
+        "id": "mail-rain-plan",
+        "title": "三月排班与雨季预案",
+        "body": "回南天期间注意：地面积水、玻璃门推拉受阻、储物柜受潮。三号站台方向的寄存物品请在雨停后及时清理。",
+        "sender": "城南便利 · 值班经理",
+        "folder": "收件箱"
+      }
+    ],
+    "music": [
+      {
+        "id": "music-haishang",
+        "title": "第一次去看海的那首",
+        "body": "安在车上单曲循环了很多遍的那首。",
+        "kind": "audio",
+        "folder": "安",
+        "meta": {
+          "album": "深夜电台",
+          "duration": "04:12"
+        }
+      },
+      {
+        "id": "music-shop",
+        "title": "收银机前的背景音",
+        "body": "雨天循环播放的轻音乐。",
+        "kind": "audio",
+        "folder": "店里",
+        "meta": {
+          "album": "门店氛围",
+          "duration": "12:00"
+        }
+      }
+    ],
+    "safari": [
+      {
+        "id": "site-platform",
+        "title": "三号站台平面图",
+        "body": "存包柜在最靠里的墙边，一共六格。",
+        "meta": {
+          "url": "https://maps.example.org/line3/platform3"
+        },
+        "folder": "收藏",
+        "favorite": true
+      },
+      {
+        "id": "site-history",
+        "title": "回南天 · 词条",
+        "body": "墙壁渗水与地面返潮的现象。",
+        "meta": {
+          "url": "https://weather.example.org/huinantian"
+        },
+        "folder": "历史记录"
+      }
+    ],
+    "maps": [
+      {
+        "id": "map-platform",
+        "title": "三号站台",
+        "body": "存包柜在最里侧",
+        "kind": "note",
+        "meta": {
+          "location": "城南 · 三号站台"
+        },
+        "folder": "收藏"
+      },
+      {
+        "id": "map-store",
+        "title": "城南便利店",
+        "body": "夜班 22:00 - 06:00",
+        "kind": "note",
+        "meta": {
+          "location": "城南 · 便利店"
+        }
+      }
+    ],
+    "weather": [
+      {
+        "id": "weather-night",
+        "title": "城南",
+        "body": "回南天。阴，地面返潮，能见度低。",
+        "kind": "note",
+        "meta": {
+          "temperature": "19",
+          "high": "21",
+          "low": "16",
+          "condition": "回南天 · 阴",
+          "locationLabel": "城南",
+          "aqi": "42"
+        }
+      }
+    ],
+    "health": [
+      {
+        "id": "health-sleep",
+        "title": "睡眠",
+        "body": "夜班颠倒，白天只有四个小时。",
+        "kind": "note",
+        "folder": "共享",
+        "meta": {
+          "metric": "睡眠评分",
+          "series": "[58,62,55,71,64]"
+        }
+      },
+      {
+        "id": "health-steps",
+        "title": "步数",
+        "body": "值班期间绕店二十圈。",
+        "kind": "note",
+        "folder": "共享",
+        "meta": {
+          "metric": "步数",
+          "series": "[1204,2311,1980,2650]"
+        }
+      }
+    ],
+    "wechat": [
+      {
+        "id": "wx-moment-rain",
+        "title": "朋友圈",
+        "body": "回南天。玻璃上的水一直不干。",
+        "kind": "post",
+        "folder": "朋友圈",
+        "sender": "陆晚",
+        "time": "2026-03-13 23:40"
+      }
+    ],
+    "qq": [
+      {
+        "id": "qq-space-store",
+        "title": "空间",
+        "body": "夜班便利店的第 400 天。热水机今天罢工了。",
+        "kind": "post",
+        "folder": "空间",
+        "sender": "陆晚",
+        "time": "2026-03-12 02:10"
+      }
+    ],
+    "wallet": [
+      {
+        "id": "wallet-umbrella",
+        "title": "便利店会员卡",
+        "body": "余额 218.00",
+        "kind": "text",
+        "meta": {
+          "amount": "218.00"
+        }
+      },
+      {
+        "id": "wallet-transaction",
+        "title": "便利店消费",
+        "body": "热饮补货",
+        "kind": "text",
+        "folder": "交易",
+        "meta": {
+          "amount": "-46.00"
+        },
+        "time": "2026-03-14 21:30"
+      }
+    ],
+    "find": [
+      {
+        "id": "find-an",
+        "title": "安",
+        "body": "最后在线：昨天 21:41",
+        "kind": "note",
+        "folder": "人物",
+        "meta": {
+          "status": "离线"
+        }
+      },
+      {
+        "id": "find-phone",
+        "title": "这台手机",
+        "body": "电量 62%",
+        "kind": "note",
+        "folder": "设备",
+        "meta": {
+          "status": "在线"
+        }
+      }
+    ],
+    "camera": [
+      {
+        "id": "camera-counter",
+        "title": "货架之间的雨",
+        "body": "手机随手拍的。",
+        "kind": "image",
+        "folder": "照片"
+      }
+    ],
+    "taobao": [
+      {
+        "id": "taobao-umbrella",
+        "title": "长柄透明伞",
+        "body": "已签收，放在储物柜第三格。",
+        "kind": "order",
+        "folder": "订单",
+        "meta": {
+          "amount": "39.90"
+        }
+      }
+    ],
+    "netease": [
+      {
+        "id": "netease-list",
+        "title": "雨声歌单",
+        "body": "夜班专用。",
+        "kind": "audio",
+        "folder": "歌单",
+        "meta": {
+          "album": "深夜电台",
+          "duration": "48:20"
+        }
+      }
+    ]
+  },
+  "variables": {
+    "knows": false,
+    "sawPhoto": false,
+    "heardCall": false
+  },
+  "events": [
+    {
+      "id": "open-start",
+      "label": "开始夜班",
+      "type": "start",
+      "actions": [
+        {
+          "type": "notification",
+          "key": "",
+          "value": "信息：安发来一条消息"
+        }
+      ]
+    },
+    {
+      "id": "read-an-code",
+      "label": "读到安发来的密码",
+      "event": "read",
+      "target": "sms-an-code",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "note-hideout",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "photo-hidden",
+          "value": true
+        },
+        {
+          "type": "clue",
+          "key": "an-code",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "",
+          "value": "备忘录：一条加密记录已解锁"
+        }
+      ]
+    },
+    {
+      "id": "read-hideout",
+      "label": "读到回南天备忘",
+      "event": "read",
+      "target": "note-hideout",
+      "next": [
+        "after-note",
+        "wait-dawn"
+      ]
+    },
+    {
+      "id": "after-note",
+      "label": "记下三号站台",
+      "type": "action",
+      "actions": [
+        {
+          "type": "variable",
+          "key": "knows",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "",
+          "value": "你把三号站台和第三格记了下来"
+        }
+      ]
+    },
+    {
+      "id": "wait-dawn",
+      "label": "等到雨停",
+      "type": "delay",
+      "delayMs": 1000,
+      "actions": [
+        {
+          "type": "date",
+          "key": "",
+          "value": "2026-03-15"
+        },
+        {
+          "type": "time",
+          "key": "",
+          "value": "05:20"
+        },
+        {
+          "type": "call",
+          "key": "call-an",
+          "value": "安"
+        }
+      ]
+    },
+    {
+      "id": "read-hidden-photo",
+      "label": "看见雨里的站台",
+      "event": "read",
+      "target": "photo-hidden",
+      "next": [
+        "after-photo"
+      ]
+    },
+    {
+      "id": "after-photo",
+      "label": "想起那天",
+      "type": "action",
+      "actions": [
+        {
+          "type": "variable",
+          "key": "sawPhoto",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "",
+          "value": "相册：雨里的三号站台"
+        }
+      ]
+    },
+    {
+      "id": "open-notes-app",
+      "label": "打开备忘录",
+      "event": "openApp",
+      "target": "notes",
+      "actions": [
+        {
+          "type": "notification",
+          "key": "",
+          "value": "备忘录：文件夹「私人」"
+        }
+      ]
+    },
+    {
+      "id": "open-safari-app",
+      "label": "打开浏览器",
+      "event": "openApp",
+      "target": "safari",
+      "actions": [
+        {
+          "type": "message",
+          "key": "messages",
+          "value": "安：三号站台的存包柜在最里面那面墙。雨停之前到。"
+        },
+        {
+          "type": "notification",
+          "key": "",
+          "value": "浏览器：三号站台平面图"
+        }
+      ]
+    },
+    {
+      "id": "answered",
+      "label": "接起电话",
+      "event": "callAnswered",
+      "target": "call-an",
+      "actions": [
+        {
+          "type": "variable",
+          "key": "heardCall",
+          "value": true
+        }
+      ],
+      "next": [
+        "branch-saw-photo",
+        "branch-no-photo"
+      ]
+    },
+    {
+      "id": "declined",
+      "label": "让电话响完",
+      "event": "callDeclined",
+      "target": "call-an",
+      "next": [
+        "ending-decline"
+      ]
+    },
+    {
+      "id": "branch-saw-photo",
+      "label": "你见过那张照片",
+      "type": "condition",
+      "logic": "and",
+      "conditions": [
+        {
+          "key": "sawPhoto",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "clue:an-code",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "next": [
+        "choice-with-photo"
+      ]
+    },
+    {
+      "id": "branch-no-photo",
+      "label": "你没看过那张照片",
+      "type": "condition",
+      "logic": "not",
+      "conditions": [
+        {
+          "key": "sawPhoto",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "next": [
+        "choice-without-photo"
+      ]
+    },
+    {
+      "id": "choice-with-photo",
+      "label": "雨停之前",
+      "type": "choice",
+      "next": [
+        "ending-platform",
+        "ending-stay"
+      ]
+    },
+    {
+      "id": "choice-without-photo",
+      "label": "还来得及吗",
+      "type": "choice",
+      "next": [
+        "ending-empty",
+        "ending-silence"
+      ]
+    },
+    {
+      "id": "ending-platform",
+      "label": "赶到三号站台",
+      "type": "ending",
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "结局·伞在第三格：她在雨停之前赶到三号站台，储物柜第三格里的伞还带着塑料的凉意。"
+        }
+      ]
+    },
+    {
+      "id": "ending-stay",
+      "label": "留在柜台后面",
+      "type": "ending",
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "结局·回南天：她把电话放回柜台上，热饮柜补满了，雨季也就这样过去了。"
+        }
+      ]
+    },
+    {
+      "id": "ending-empty",
+      "label": "赶到站台却没找到",
+      "type": "ending",
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "结局·空手：她到了站台，却不知道伞在哪个格子里，只能淋着雨往回走。"
+        }
+      ]
+    },
+    {
+      "id": "ending-silence",
+      "label": "谁也不见",
+      "type": "ending",
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "结局·未说出口：她把话留在备忘录里，玻璃上的水一直流到天亮。"
+        }
+      ]
+    },
+    {
+      "id": "ending-decline",
+      "label": "没有接那通电话",
+      "type": "ending",
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "结局·忙音：电话响到自动挂断，那天夜班谁也没有提起它。"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "name": "platform-ending",
+      "steps": [
+        {
+          "event": "read",
+          "target": "sms-an-code"
+        },
+        {
+          "event": "read",
+          "target": "photo-hidden"
+        },
+        {
+          "event": "read",
+          "target": "note-hideout",
+          "password": "0314"
+        },
+        {
+          "advanceMs": 1000
+        },
+        {
+          "event": "callAnswered",
+          "target": "call-an"
+        },
+        {
+          "choose": "ending-platform"
+        }
+      ],
+      "ending": "结局·伞在第三格：她在雨停之前赶到三号站台，储物柜第三格里的伞还带着塑料的凉意。",
+      "expectUnlocked": [
+        "note-hideout",
+        "photo-hidden"
+      ]
+    },
+    {
+      "name": "stay-ending",
+      "steps": [
+        {
+          "event": "read",
+          "target": "sms-an-code"
+        },
+        {
+          "event": "read",
+          "target": "photo-hidden"
+        },
+        {
+          "event": "read",
+          "target": "note-hideout",
+          "password": "0314"
+        },
+        {
+          "advanceMs": 1000
+        },
+        {
+          "event": "callAnswered",
+          "target": "call-an"
+        },
+        {
+          "choose": "ending-stay"
+        }
+      ],
+      "ending": "结局·回南天：她把电话放回柜台上，热饮柜补满了，雨季也就这样过去了。",
+      "expectUnlocked": [
+        "note-hideout",
+        "photo-hidden"
+      ]
+    },
+    {
+      "name": "empty-ending",
+      "steps": [
+        {
+          "event": "read",
+          "target": "sms-an-code"
+        },
+        {
+          "event": "read",
+          "target": "note-hideout",
+          "password": "0314"
+        },
+        {
+          "advanceMs": 1000
+        },
+        {
+          "event": "callAnswered",
+          "target": "call-an"
+        },
+        {
+          "choose": "ending-empty"
+        }
+      ],
+      "ending": "结局·空手：她到了站台，却不知道伞在哪个格子里，只能淋着雨往回走。"
+    },
+    {
+      "name": "silence-ending",
+      "steps": [
+        {
+          "event": "read",
+          "target": "sms-an-code"
+        },
+        {
+          "event": "read",
+          "target": "note-hideout",
+          "password": "0314"
+        },
+        {
+          "advanceMs": 1000
+        },
+        {
+          "event": "callAnswered",
+          "target": "call-an"
+        },
+        {
+          "choose": "ending-silence"
+        }
+      ],
+      "ending": "结局·未说出口：她把话留在备忘录里，玻璃上的水一直流到天亮。"
+    },
+    {
+      "name": "decline-ending",
+      "steps": [
+        {
+          "event": "read",
+          "target": "sms-an-code"
+        },
+        {
+          "event": "read",
+          "target": "note-hideout",
+          "password": "0314"
+        },
+        {
+          "advanceMs": 1000
+        },
+        {
+          "event": "callDeclined",
+          "target": "call-an"
+        }
+      ],
+      "ending": "结局·忙音：电话响到自动挂断，那天夜班谁也没有提起它。"
+    }
+  ]
+}

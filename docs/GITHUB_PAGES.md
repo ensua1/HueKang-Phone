@@ -10,6 +10,8 @@
 
 默认构建 stories/template/story.json。要使用自己的作品，直接修改它；也可以在工作流 build 任务中设置 STORY_FILE 为你的脚本路径。
 
+stories/ 下的其他故事目录会各自构建为独立作品，可用 ?story=<目录名> 打开，例如 ?story=huan-nan-tian。默认首页仍是 template 故事。
+
 页面可以部署在仓库子路径下，不需要购买域名或使用真实账号登录。不要用 file:// 打开。刷新后资源应仍正常加载；第一次访问需要联网，缓存完成后核心剧情可以离线游玩。
 
 如果构建失败，先看 Actions 中第一个红色步骤；故事错误会显示文件、行号和字段。确认 npm run story:validate、npm run story:test、npm run build 均通过后再提交。

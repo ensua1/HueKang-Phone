@@ -14,6 +14,7 @@ references/ios/private/
 public/test-work.json
 
 public/blank-work.json
+public/stories/
 .env
 .env.*
 !.env.example
