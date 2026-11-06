@@ -151,6 +151,7 @@ function PhoneRuntime({
     thread?: string;
   }>({});
   const [pendingThread, setPendingThread] = useState("");
+  const [endingDismissed, setEndingDismissed] = useState(false);
   const noticesSeen = useRef(0);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
@@ -616,7 +617,7 @@ function PhoneRuntime({
               ))}
             </div>
           )}
-          {!creator && s.endings.length > 0 && !locked && (
+          {!creator && s.endings.length > 0 && !locked && !endingDismissed && (
             <div className="story-overlay ending">
               <span className="eyebrow">ENDING · {s.endings.length}</span>
               <h2>故事在这里停泊。</h2>
@@ -626,9 +627,16 @@ function PhoneRuntime({
                   update(dispatch(work, initialRuntime(work), "start"));
                   setApp("");
                   setLocked(true);
+                  setEndingDismissed(false);
                 }}
               >
                 重新开始
+              </button>
+              <button
+                className="ending-secondary"
+                onClick={() => setEndingDismissed(true)}
+              >
+                探索主线外互动
               </button>
             </div>
           )}

@@ -29,6 +29,13 @@ async function openKakaoThread(page: Page, threadName: string) {
   await page.locator(".kzkr").filter({ hasText: threadName }).first().click();
 }
 
+/** 从当前会话返回到 KKT 会话列表（可能已停留在别的会话里）。 */
+async function backToKakaoList(page: Page) {
+  if (await page.locator(".kzkk").isVisible().catch(() => false)) return;
+  await page.getByRole("button", { name: "返回", exact: true }).last().click();
+  await expect(page.locator(".kzkk")).toBeVisible();
+}
+
 test("休宁凯：主线选择流程——然竣报信到杋圭回国", async ({ page }) => {
   await unlockPhone(page);
 
@@ -154,4 +161,68 @@ test("休宁凯：NPC互动按对话框隔离，不会跨会话触发", async ({
   await expect(
     page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
   ).toHaveCount(1);
+});
+
+test("休宁凯：对话气泡不重播动画，重新打开已看过的会话直接显示", async ({
+  page,
+}) => {
+  await unlockPhone(page);
+  await openKakaoThread(page, "太显");
+
+  // 首次打开：气泡带淡入动画 class，并按 0.5s 递增延迟
+  await expect(page.locator(".kzm.kzmsg-in").first()).toBeVisible();
+  await expect(page.locator(".kzm.kzmsg-in")).toHaveCount(2);
+
+  // 返回会话列表，再次打开同一会话：历史气泡不再带动画 class
+  await page.getByRole("button", { name: "返回", exact: true }).last().click();
+  await expect(page.locator(".kzkr").first()).toBeVisible();
+  await page.locator(".kzkr").filter({ hasText: "太显" }).first().click();
+
+  await expect(page.locator(".kzm").first()).toBeVisible();
+  await expect(page.locator(".kzm.kzmsg-in")).toHaveCount(0);
+});
+
+test("休宁凯：主线结束可选择重新开始或探索主线外互动", async ({
+  page,
+}) => {
+  await unlockPhone(page);
+
+  // 走完主线：banner → 两轮选择 → 结局
+  await expect(page.locator(".device-banner")).toBeVisible({ timeout: 10000 });
+  await page.locator(".device-banner").click();
+  await expect(page.locator(".kzinline-choice").first()).toBeVisible({
+    timeout: 8000,
+  });
+  await page.getByRole("button", { name: "哥…我说过了还不是男朋友.." }).click();
+  await expect(page.locator(".kzinline-choice").first()).toBeVisible({
+    timeout: 8000,
+  });
+  await page.getByRole("button", { name: "我知道了" }).click();
+
+  // 结局弹窗提供两个选项
+  const ending = page.locator(".story-overlay.ending");
+  await expect(ending).toBeVisible({ timeout: 8000 });
+  await expect(
+    ending.getByRole("button", { name: "重新开始" }),
+  ).toBeVisible();
+  await expect(
+    ending.getByRole("button", { name: "探索主线外互动" }),
+  ).toBeVisible();
+
+  // 选"探索主线外互动"：弹窗关闭，主线进度保留，仍可与 NPC 互动
+  await ending.getByRole("button", { name: "探索主线外互动" }).click();
+  await expect(ending).toHaveCount(0);
+
+  await backToKakaoList(page);
+  await page.locator(".kzkr").filter({ hasText: "太显" }).first().click();
+  // 主线消息仍在（进度没被清空）
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "想吃巧克力海螺面包" }),
+  ).toBeVisible({ timeout: 8000 });
+  // 且还能继续和太显互动
+  await page.getByRole("textbox", { name: "KKT消息" }).fill("猫");
+  await page.getByRole("button", { name: "发送KKT消息" }).click();
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toBeVisible({ timeout: 8000 });
 });

@@ -67,6 +67,10 @@ export function MymyKakao(p: SkinProps) {
     [draft, setDraft] = useState(""),
     [query, setQuery] = useState(""),
     [menu, setMenu] = useState(false);
+  // 记录已经播放过淡入动画的消息 id。useRef 在组件生命周期内持久，
+  // 即使 p.thread 变化（列表→对话→返回→再打开）也不会重置，
+  // 因此已显示过的历史气泡不会重播动画，只有首次出现的新消息才播放。
+  const animatedIds = useRef<Set<string>>(new Set());
   const list = grouped(p.items),
     /**
      * 对话气泡按"进入对话的先后"排列，而不是按各自的 time 字段。
@@ -133,20 +137,21 @@ export function MymyKakao(p: SkinProps) {
           <div className="msgs kk" ref={scroll}>
             {messages.map((m, i) => {
               const run = messageRun(messages, i);
-              // 气泡从上到下逐条出现，间隔 0.5 秒。
-              // React 复用同一 key 的节点，已显示过的历史气泡不会重播动画，
-              // 只有首次挂载或新追加的气泡才会播放淡入。
-              const delay = Math.min(i * 0.5, 3);
+              // 只有不在 animatedIds 集合中的消息（首次出现的新消息）
+              // 才播放淡入动画并设置 delay；已显示过的历史气泡直接显示。
+              const isNew = !animatedIds.current.has(m.id);
+              if (isNew) animatedIds.current.add(m.id);
+              const delay = isNew ? Math.min(i * 0.5, 3) : 0;
               return (
                 <div
                   key={m.id}
                   data-seq={m.meta.seq ?? ""}
                   className={
-                    "kzm kzmsg-in " +
+                    "kzm " + (isNew ? "kzmsg-in " : "") +
                     (m.outgoing ? "kzmy" : "kzot") +
                     (run.first ? " first" : "")
                   }
-                  style={{ animationDelay: `${delay}s` }}
+                  style={isNew ? { animationDelay: `${delay}s` } : undefined}
                 >
                   {!m.outgoing && run.first && (
                     <>

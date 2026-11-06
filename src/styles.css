@@ -1798,6 +1798,12 @@ svg {
 .ending button {
   margin-top: 30px;
 }
+.ending button.ending-secondary {
+  margin-top: 12px;
+  background: transparent;
+  border-color: #c5d0b8;
+  color: #5a6b4a;
+}
 .runtime-error {
   position: absolute;
   z-index: 61;
