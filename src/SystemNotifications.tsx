@@ -3,14 +3,18 @@ import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { AppArtwork } from "./AppArtwork";
 import type { Work } from "./schema";
-export function notificationContent(text: string, apps: Work["apps"]) {
+export function notificationContent(
+  text: string,
+  apps: Work["apps"],
+  fallbackAppId = "messages",
+) {
   const separator = text.search(/[:：]/);
   const sender = separator > 0 ? text.slice(0, separator) : "信息";
   const app = apps.find((a) => a.name === sender);
   return {
     title: sender,
     body: separator > 0 ? text.slice(separator + 1) : text,
-    appId: app?.id ?? "messages",
+    appId: app?.id ?? fallbackAppId,
   };
 }
 export function SystemNotifications({

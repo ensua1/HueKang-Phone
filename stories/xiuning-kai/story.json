@@ -86,7 +86,10 @@
       "id": "kkt-yeonjun",
       "app": "kakao",
       "title": "然竣哥",
-      "participants": ["yeonjun", "owner"],
+      "participants": [
+        "yeonjun",
+        "owner"
+      ],
       "messages": [
         {
           "id": "kkt-yj-init",
@@ -100,7 +103,10 @@
       "id": "kkt-taehyun",
       "app": "kakao",
       "title": "太显🐱🩶",
-      "participants": ["taehyun", "owner"],
+      "participants": [
+        "taehyun",
+        "owner"
+      ],
       "messages": [
         {
           "id": "kkt-th-1",
@@ -120,7 +126,10 @@
       "id": "kkt-soobin",
       "app": "kakao",
       "title": "崔秀彬",
-      "participants": ["soobin", "owner"],
+      "participants": [
+        "soobin",
+        "owner"
+      ],
       "messages": [
         {
           "id": "kkt-sb-1",
@@ -134,7 +143,10 @@
       "id": "kkt-beomgyu",
       "app": "kakao",
       "title": "杋圭哥",
-      "participants": ["beomgyu", "owner"],
+      "participants": [
+        "beomgyu",
+        "owner"
+      ],
       "messages": [
         {
           "id": "kkt-bg-1",
@@ -148,7 +160,11 @@
       "id": "kkt-group-men",
       "app": "kakao",
       "title": "西八真男人",
-      "participants": ["taehyun", "beomgyu", "owner"],
+      "participants": [
+        "taehyun",
+        "beomgyu",
+        "owner"
+      ],
       "messages": [
         {
           "id": "kkt-group-1",
@@ -383,7 +399,9 @@
       "type": "start",
       "event": "start",
       "label": "故事开始",
-      "next": ["yeonjun-msg"]
+      "next": [
+        "yeonjun-msg"
+      ]
     },
     {
       "id": "yeonjun-msg",
@@ -396,17 +414,24 @@
           "key": "kakao",
           "value": "你男朋友的前男友要回国了",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:28"
         },
         {
           "type": "notification",
           "value": "然竣哥：你男朋友的前男友要回国了",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "然竣哥" }
+          "meta": {
+            "app": "kakao",
+            "thread": "然竣哥"
+          }
         }
       ],
-      "next": ["choice-reply-1"]
+      "next": [
+        "choice-reply-1"
+      ]
     },
     {
       "id": "choice-reply-1",
@@ -414,7 +439,10 @@
       "event": "",
       "target": "inline:kakao:然竣哥",
       "label": "如何回复然竣",
-      "next": ["reply-1a", "reply-1b"]
+      "next": [
+        "reply-1a",
+        "reply-1b"
+      ]
     },
     {
       "id": "reply-1a",
@@ -427,7 +455,9 @@
           "type": "message",
           "key": "kakao",
           "value": "哥…我说过了还不是男朋友..",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:30"
         },
         {
@@ -435,11 +465,15 @@
           "key": "kakao",
           "value": "我以为你每天显化快成功了",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:31"
         }
       ],
-      "next": ["yeonjun-followup"]
+      "next": [
+        "yeonjun-followup"
+      ]
     },
     {
       "id": "reply-1b",
@@ -452,7 +486,9 @@
           "type": "message",
           "key": "kakao",
           "value": "(°_°)？",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:30"
         },
         {
@@ -460,11 +496,15 @@
           "key": "kakao",
           "value": "我以为你每天显化快成功了",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:31"
         }
       ],
-      "next": ["yeonjun-followup"]
+      "next": [
+        "yeonjun-followup"
+      ]
     },
     {
       "id": "yeonjun-followup",
@@ -478,11 +518,15 @@
           "key": "kakao",
           "value": "还有你怎么不好奇我说的是谁",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:32"
         }
       ],
-      "next": ["choice-reply-2"]
+      "next": [
+        "choice-reply-2"
+      ]
     },
     {
       "id": "choice-reply-2",
@@ -490,7 +534,10 @@
       "event": "",
       "target": "inline:kakao:然竣哥",
       "label": "怎么回",
-      "next": ["reply-2a", "reply-2b"]
+      "next": [
+        "reply-2a",
+        "reply-2b"
+      ]
     },
     {
       "id": "reply-2a",
@@ -503,7 +550,9 @@
           "type": "message",
           "key": "kakao",
           "value": "我知道了",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:33"
         },
         {
@@ -512,7 +561,9 @@
           "value": true
         }
       ],
-      "next": ["beomgyu-group-msg"]
+      "next": [
+        "beomgyu-group-msg"
+      ]
     },
     {
       "id": "reply-2b",
@@ -525,7 +576,9 @@
           "type": "message",
           "key": "kakao",
           "value": "还能有谁",
-          "meta": { "thread": "然竣哥" },
+          "meta": {
+            "thread": "然竣哥"
+          },
           "time": "2026-05-20 19:33"
         },
         {
@@ -534,7 +587,9 @@
           "value": true
         }
       ],
-      "next": ["beomgyu-group-msg"]
+      "next": [
+        "beomgyu-group-msg"
+      ]
     },
     {
       "id": "beomgyu-group-msg",
@@ -548,14 +603,19 @@
           "key": "kakao",
           "value": "我回来了！",
           "sender": "杋圭哥",
-          "meta": { "thread": "西八真男人" },
+          "meta": {
+            "thread": "西八真男人"
+          },
           "time": "2026-05-20 19:34"
         },
         {
           "type": "notification",
           "value": "西八真男人：杋圭哥：我回来了！",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "西八真男人" }
+          "meta": {
+            "app": "kakao",
+            "thread": "西八真男人"
+          }
         },
         {
           "type": "variable",
@@ -563,7 +623,9 @@
           "value": true
         }
       ],
-      "next": ["ending-wait"]
+      "next": [
+        "ending-wait"
+      ]
     },
     {
       "id": "ending-wait",
@@ -590,14 +652,19 @@
           "key": "kakao",
           "value": "你怎么知道我今天想吃这个",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：你怎么知道我今天想吃这个",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -614,14 +681,19 @@
           "key": "kakao",
           "value": "怎么给我买鸡蛋？\n知道了 今晚来我家吃吧",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：怎么给我买鸡蛋？",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -638,14 +710,19 @@
           "key": "kakao",
           "value": "kk 寄错了吧？",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：kk 寄错了吧？",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -662,14 +739,19 @@
           "key": "kakao",
           "value": "下次给我买草莓大福吧\n这个你自己留着吃",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：下次给我买草莓大福吧",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -686,14 +768,19 @@
           "key": "kakao",
           "value": "今天喝过一杯了欸\n不过我不介意再喝",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：今天喝过一杯了欸",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -710,14 +797,19 @@
           "key": "kakao",
           "value": "你再作弊我会再把这扔了",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：你再作弊我会再把这扔了",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -734,14 +826,19 @@
           "key": "kakao",
           "value": "啊…我不是魔术师了\n现在是会计师",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：啊…我不是魔术师了",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -758,14 +855,19 @@
           "key": "kakao",
           "value": "休宁凯你搞什么…\n压力很大吗？\n要我帮你？\n还是我理解错了？",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：休宁凯你搞什么…",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -782,14 +884,19 @@
           "key": "kakao",
           "value": "？？？？\n那个..我不是故意拆开的\n等一下？收件人是我啊\n休宁凯？你？！",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：？？？？收件人是我啊",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -806,14 +913,19 @@
           "key": "kakao",
           "value": "kk 休宁呀\n你喜欢的东西好奇怪哦",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：你喜欢的东西好奇怪哦",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -830,14 +942,19 @@
           "key": "kakao",
           "value": "你的公仔又寄到我这了…\n你来拿吗？",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶" },
+          "meta": {
+            "thread": "太显🐱🩶"
+          },
           "time": "2026-05-20 19:35"
         },
         {
           "type": "notification",
           "value": "太显🐱🩶：你的公仔又寄到我这了",
           "key": "notify",
-          "meta": { "app": "kakao", "thread": "太显🐱🩶" }
+          "meta": {
+            "app": "kakao",
+            "thread": "太显🐱🩶"
+          }
         }
       ],
       "next": []
@@ -865,7 +982,10 @@
           "key": "kakao",
           "value": "都说了我不是猫啊",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-kw-cat" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-kw-cat"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -893,7 +1013,10 @@
           "key": "kakao",
           "value": "是在叫我吗？",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-kw-diandian" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-kw-diandian"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -909,20 +1032,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:th-kw-cat",
-          "op": "neq",
-          "value": true
-        },
-        {
-          "key": "completed:th-kw-diandian",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -931,7 +1044,11 @@
           "key": "kakao",
           "value": "噢，今晚一起吃饭吧",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-rand" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -947,20 +1064,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:th-kw-cat",
-          "op": "neq",
-          "value": true
-        },
-        {
-          "key": "completed:th-kw-diandian",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -969,7 +1076,11 @@
           "key": "kakao",
           "value": "干嘛呢",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-rand" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -985,20 +1096,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:th-kw-cat",
-          "op": "neq",
-          "value": true
-        },
-        {
-          "key": "completed:th-kw-diandian",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -1007,7 +1108,11 @@
           "key": "kakao",
           "value": "洋人叽里咕噜说什么呢",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-rand" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -1023,20 +1128,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:th-kw-cat",
-          "op": "neq",
-          "value": true
-        },
-        {
-          "key": "completed:th-kw-diandian",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -1045,7 +1140,11 @@
           "key": "kakao",
           "value": "ᗜ - ᗜ",
           "sender": "太显🐱🩶",
-          "meta": { "thread": "太显🐱🩶", "randomPool": "th-rand" },
+          "meta": {
+            "thread": "太显🐱🩶",
+            "randomPool": "th-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -1061,15 +1160,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:bg-kw-gangqiugang",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -1078,7 +1172,11 @@
           "key": "kakao",
           "value": "我们休宁儿找哥干嘛？",
           "sender": "杋圭哥",
-          "meta": { "thread": "杋圭哥", "randomPool": "bg-rand" },
+          "meta": {
+            "thread": "杋圭哥",
+            "randomPool": "bg-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -1094,15 +1192,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:bg-kw-gangqiugang",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -1111,7 +1204,11 @@
           "key": "kakao",
           "value": "我刚睡醒",
           "sender": "杋圭哥",
-          "meta": { "thread": "杋圭哥", "randomPool": "bg-rand" },
+          "meta": {
+            "thread": "杋圭哥",
+            "randomPool": "bg-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -1127,15 +1224,10 @@
           "key": "ui:kakao:mymyKktSent",
           "op": "includes",
           "value": ""
-        },
-        {
-          "key": "completed:bg-kw-gangqiugang",
-          "op": "neq",
-          "value": true
         }
       ],
       "logic": "and",
-      "once": true,
+      "once": false,
       "delayMs": 0,
       "next": [],
       "actions": [
@@ -1144,7 +1236,11 @@
           "key": "kakao",
           "value": "休宁呀，为什么总找哥聊天？",
           "sender": "杋圭哥",
-          "meta": { "thread": "杋圭哥", "randomPool": "bg-rand" },
+          "meta": {
+            "thread": "杋圭哥",
+            "randomPool": "bg-rand",
+            "fallback": "true"
+          },
           "time": "2026-05-20 19:41"
         }
       ]
@@ -1172,7 +1268,10 @@
           "key": "kakao",
           "value": "婉拒了，控制饮食不吃",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥", "randomPool": "yj-kw-ramen" },
+          "meta": {
+            "thread": "然竣哥",
+            "randomPool": "yj-kw-ramen"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -1200,7 +1299,10 @@
           "key": "kakao",
           "value": "啊爷爷！",
           "sender": "然竣哥",
-          "meta": { "thread": "然竣哥", "randomPool": "yj-kw-gangqiugang" },
+          "meta": {
+            "thread": "然竣哥",
+            "randomPool": "yj-kw-gangqiugang"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -1228,7 +1330,10 @@
           "key": "kakao",
           "value": "这个字不好我们不提",
           "sender": "崔秀彬",
-          "meta": { "thread": "崔秀彬", "randomPool": "sb-kw-jiao" },
+          "meta": {
+            "thread": "崔秀彬",
+            "randomPool": "sb-kw-jiao"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -1256,7 +1361,10 @@
           "key": "kakao",
           "value": "这个字不好我们不提",
           "sender": "崔秀彬",
-          "meta": { "thread": "崔秀彬", "randomPool": "sb-kw-pao" },
+          "meta": {
+            "thread": "崔秀彬",
+            "randomPool": "sb-kw-pao"
+          },
           "time": "2026-05-20 19:40"
         }
       ]
@@ -1284,7 +1392,10 @@
           "key": "kakao",
           "value": "bangbangbangbangbangbang！",
           "sender": "杋圭哥",
-          "meta": { "thread": "杋圭哥", "randomPool": "bg-kw-gangqiugang" },
+          "meta": {
+            "thread": "杋圭哥",
+            "randomPool": "bg-kw-gangqiugang"
+          },
           "time": "2026-05-20 19:40"
         }
       ]

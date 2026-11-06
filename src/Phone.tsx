@@ -715,12 +715,16 @@ function PhoneRuntime({
               }}
             >
               <AppIcon
-                id={notificationContent(banner, work.apps).appId}
+                id={notificationContent(banner, work.apps, bannerMeta.app).appId}
                 small
               />
               <span>
-                <strong>{notificationContent(banner, work.apps).title}</strong>
-                <span>{notificationContent(banner, work.apps).body}</span>
+                <strong>
+                  {notificationContent(banner, work.apps).title}
+                </strong>
+                <span>
+                  {notificationContent(banner, work.apps).body}
+                </span>
               </span>
             </button>
           )}
@@ -1037,6 +1041,7 @@ function AppContent({
               appId={app.id}
               owner={work.phone.owner}
               virtualTime={state.time}
+              msgSeq={state.msgSeq ?? 0}
               ui={state.ui?.[app.id]}
               onUi={creator ? undefined : onUi}
               name={name}

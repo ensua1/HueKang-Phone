@@ -38,6 +38,8 @@ export type SkinProps = {
   appId?: string;
   owner?: string;
   virtualTime?: string;
+  /** 当前运行时已分配的消息序号，用于让本地发送的消息排到正确的位置。 */
+  msgSeq?: number;
   name: string;
   items: Item[];
   creator: boolean;

@@ -68,11 +68,12 @@ export function MymyKakao(p: SkinProps) {
     [query, setQuery] = useState(""),
     [menu, setMenu] = useState(false);
   const list = grouped(p.items),
-    fullDate = (p.virtualTime || "").includes(" ")
-      ? (p.virtualTime || "").split(" ")[0]
-      : "2026-05-20",
-    normalizeTime = (t: string) =>
-      /^\d{1,2}:\d{2}$/.test(t) ? `${fullDate} ${t}` : t,
+    /**
+     * 对话气泡按"进入对话的先后"排列，而不是按各自的 time 字段。
+     * 初始聊天记录没有 seq（写在作品数据里），整体排在前面并按时间排序；
+     * 之后引擎写入的消息与玩家本地发送的消息共享同一个 seq 空间，
+     * 因此 NPC 回复一定紧跟在触发它的那条玩家消息后面。
+     */
     allMessages = [
       ...p.items.filter((i) => i.title === p.thread),
       ...sent.flatMap((raw, index) => {
@@ -80,7 +81,7 @@ export function MymyKakao(p: SkinProps) {
           const entry: unknown = JSON.parse(raw);
           if (
             !Array.isArray(entry) ||
-            entry.length !== 3 ||
+            entry.length !== 4 ||
             !entry.every((v) => typeof v === "string") ||
             entry[0] !== p.thread
           )
@@ -93,7 +94,7 @@ export function MymyKakao(p: SkinProps) {
               time: entry[2],
               sender: p.owner || "机主",
               outgoing: true,
-              meta: { local: "true" },
+              meta: { local: "true", seq: entry[3] },
             }),
           ];
         } catch {
@@ -101,11 +102,16 @@ export function MymyKakao(p: SkinProps) {
         }
       }),
     ],
-    messages = allMessages.sort((a, b) =>
-      normalizeTime(a.time)
-        .replace(/[-: ]/g, "")
-        .localeCompare(normalizeTime(b.time).replace(/[-: ]/g, "")),
-    ),
+    messages = allMessages
+      .map((m, index) => ({
+        item: m,
+        index,
+        // 有 seq 的走序号通道；没有 seq 的（初始聊天记录）落到负值通道，
+        // 保证它们整体排在运行时消息之前。
+        rank: m.meta.seq === undefined ? -1e9 + index : Number(m.meta.seq),
+      }))
+      .sort((a, b) => a.rank - b.rank || a.index - b.index)
+      .map((entry) => entry.item),
     scroll = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const node = scroll.current;
@@ -127,15 +133,20 @@ export function MymyKakao(p: SkinProps) {
           <div className="msgs kk" ref={scroll}>
             {messages.map((m, i) => {
               const run = messageRun(messages, i);
+              // 从末尾往前排延迟：新到的气泡立刻出现，紧邻它的上一条晚一点点，
+              // 于是看起来是一句接一句冒出来，而不是整屏一起弹出。
+              // React 复用同一个 key 对应的节点，历史气泡不会重播动画。
+              const delay = Math.min((messages.length - 1 - i) * 0.15, 1.2);
               return (
                 <div
                   key={m.id}
+                  data-seq={m.meta.seq ?? ""}
                   className={
                     "kzm kzmsg-in " +
                     (m.outgoing ? "kzmy" : "kzot") +
                     (run.first ? " first" : "")
                   }
-                  style={{ animationDelay: `${Math.min(i * 0.15, 1.5)}s` }}
+                  style={{ animationDelay: `${delay}s` }}
                 >
                   {!m.outgoing && run.first && (
                     <>
@@ -183,12 +194,16 @@ export function MymyKakao(p: SkinProps) {
             onSubmit={(e) => {
               e.preventDefault();
               if (draft.trim()) {
+                // 记录发送瞬间的运行时序号。引擎随后分配给 NPC 回复的序号一定
+                // 更大，于是回复会紧跟在玩家这条消息后面。
+                const seq = String((p.msgSeq ?? 0) + 0.5);
                 setSent([
                   ...sent,
                   JSON.stringify([
                     p.thread,
                     draft.trim(),
                     p.virtualTime || "09:41",
+                    seq,
                   ]),
                 ]);
                 setDraft("");

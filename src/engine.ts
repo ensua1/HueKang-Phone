@@ -74,6 +74,7 @@ function apply(a: Action, s: Runtime, w: Work) {
         s.choices.push({ label: String(a.value), target: a.key });
       break;
     case "message":
+      s.msgSeq = (s.msgSeq ?? 0) + 1;
       s.messages[a.key] = [
         ...(s.messages[a.key] ?? []),
         makeItem({
@@ -83,10 +84,12 @@ function apply(a: Action, s: Runtime, w: Work) {
           sender: w.phone.owner,
           outgoing: true,
           time: a.time || s.time || w.phone.time,
+          meta: { seq: String(s.msgSeq), ...(a.meta ?? {}) },
         }),
       ];
       break;
     case "reply": {
+      s.msgSeq = (s.msgSeq ?? 0) + 1;
       const item = makeItem({
         id: `reply-${a.key}-${s.completed.length}-${s.messages[a.key]?.length ?? 0}`,
         title: String(a.meta?.thread ?? ""),
@@ -95,7 +98,7 @@ function apply(a: Action, s: Runtime, w: Work) {
         avatar: a.avatar || "",
         time: a.time || s.time || w.phone.time,
         outgoing: false,
-        meta: { reply: "true", ...(a.meta ?? {}) },
+        meta: { reply: "true", seq: String(s.msgSeq), ...(a.meta ?? {}) },
       });
       s.messages[a.key] = [...(s.messages[a.key] ?? []), item];
       s.appBadges ??= {};
@@ -111,6 +114,7 @@ function runQueue(
   target: string,
   queue: string[],
   resuming = new Set<string>(),
+  usedPools = new Set<string>(),
 ) {
   const seen = new Set<string>();
   let steps = 0;
@@ -130,18 +134,15 @@ function runQueue(
     const replyActions = n.actions.filter((a) => a.type === "reply");
     if (replyActions.length) {
       const pool = replyActions[0].meta?.randomPool;
-      if (
-        pool &&
-        w.nodes.some(
-          (nn) =>
-            nn.actions.some(
-              (aa) => aa.type === "reply" && aa.meta?.randomPool === pool,
-            ) &&
-            s.completed.includes(nn.id) &&
-            nn.id !== id,
-        )
-      )
+      // 同一批随机回复在一个事件周期内只出一条。
+      // 周期以一次 dispatch 为单位：玩家每发一条消息就开启一个新的周期，
+      // 于是下一条消息仍能随机抽到一句，而这一次不会把整批都倒出来。
+      if (pool && usedPools.has(pool)) continue;
+      // 兜底回复只在这一轮还没有人开口时才补位，
+      // 这样关键词命中时不会出现"回两句"。
+      if (replyActions[0].meta?.fallback === "true" && usedPools.size > 0)
         continue;
+      if (pool) usedPools.add(pool);
     }
     if (n.type === "delay" && !resuming.has(id)) {
       s.scheduled ??= [];

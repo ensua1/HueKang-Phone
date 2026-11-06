@@ -162,6 +162,12 @@ export type Runtime = {
   choices: { label: string; target: string; context?: string }[];
   messages: Record<string, Item[]>;
   appBadges: Record<string, number>;
+  /**
+   * 全局单调递增的消息序号。引擎写入的 message/reply 与玩家在聊天框发送的
+   * 消息共享同一个计数空间，因此对话内可以按进入顺序排列，而不是按各��
+   * 自的 time 字段——两套时间来源并不在同一时间轴上。
+   */
+  msgSeq: number;
   time: string;
   trace: string[];
 };
@@ -188,6 +194,7 @@ export function initialRuntime(w: Work): Runtime {
     choices: [],
     messages: {},
     appBadges: {},
+    msgSeq: 0,
     time: w.phone.time,
     trace: [],
   };
