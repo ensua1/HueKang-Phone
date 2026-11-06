@@ -67,6 +67,75 @@ describe("story progression", () => {
     expect(validateGraph(w.nodes).join()).toContain("missing");
     expect(validateGraph(w.nodes).join()).toContain("不可达");
   });
+  it("isolates NPC replies to the thread the player typed in", () => {
+    const w = createWork();
+    // 两个 NPC 各自监听同一个发送变量，但只在自己的会话里回应。
+    w.nodes = [
+      {
+        id: "th-reply",
+        x: 0,
+        y: 0,
+        type: "event",
+        event: "variable",
+        target: "ui:kakao:mymyKktSent",
+        label: "太显回复",
+        conditions: [
+          { key: "ui:kakao:mymyKktSent", op: "includes", value: "猫" },
+        ],
+        logic: "and",
+        once: false,
+        delayMs: 0,
+        next: [],
+        actions: [
+          {
+            type: "reply",
+            key: "kakao",
+            value: "都说了我不是猫啊",
+            sender: "太显",
+            meta: { thread: "太显" },
+          },
+        ],
+      },
+      {
+        id: "yj-reply",
+        x: 0,
+        y: 0,
+        type: "event",
+        event: "variable",
+        target: "ui:kakao:mymyKktSent",
+        label: "然竣回复",
+        conditions: [
+          { key: "ui:kakao:mymyKktSent", op: "includes", value: "猫" },
+        ],
+        logic: "and",
+        once: false,
+        delayMs: 0,
+        next: [],
+        actions: [
+          {
+            type: "reply",
+            key: "kakao",
+            value: "我以为你每天显化快成功了",
+            sender: "然竣哥",
+            meta: { thread: "然竣哥" },
+          },
+        ],
+      },
+    ];
+    const s = initialRuntime(w);
+    // 玩家在"然竣哥"对话框输入"猫"
+    s.ui = {
+      kakao: {
+        mymyKktSent: [JSON.stringify(["然竣哥", "猫", "19:28", "0.5"])],
+      },
+    };
+    const after = dispatch(w, s, "variable", "ui:kakao:mymyKktSent");
+    const bodies = (after.messages.kakao ?? []).map((m) => m.body);
+    expect(bodies).toEqual(["我以为你每天显化快成功了"]);
+    expect(
+      (after.messages.kakao ?? []).every((m) => m.title === "然竣哥"),
+    ).toBe(true);
+  });
   it("free exploration bypasses story effects", () => {
     const w = createWork();
     w.mode = "explore";

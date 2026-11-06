@@ -133,10 +133,10 @@ export function MymyKakao(p: SkinProps) {
           <div className="msgs kk" ref={scroll}>
             {messages.map((m, i) => {
               const run = messageRun(messages, i);
-              // 从末尾往前排延迟：新到的气泡立刻出现，紧邻它的上一条晚一点点，
-              // 于是看起来是一句接一句冒出来，而不是整屏一起弹出。
-              // React 复用同一个 key 对应的节点，历史气泡不会重播动画。
-              const delay = Math.min((messages.length - 1 - i) * 0.15, 1.2);
+              // 气泡从上到下逐条出现，间隔 0.5 秒。
+              // React 复用同一 key 的节点，已显示过的历史气泡不会重播动画，
+              // 只有首次挂载或新追加的气泡才会播放淡入。
+              const delay = Math.min(i * 0.5, 3);
               return (
                 <div
                   key={m.id}

@@ -119,3 +119,39 @@ test("休宁凯：主线外关键词触发太显和然竣回复", async ({ page 
     page.locator(".kzbub").filter({ hasText: "婉拒了，控制饮食不吃" }),
   ).toBeVisible({ timeout: 8000 });
 });
+
+test("休宁凯：NPC互动按对话框隔离，不会跨会话触发", async ({ page }) => {
+  await unlockPhone(page);
+
+  // 在太显会话发"猫"，太显应当回复
+  await openKakaoThread(page, "太显");
+  await page.getByRole("textbox", { name: "KKT消息" }).fill("猫");
+  await page.getByRole("button", { name: "发送KKT消息" }).click();
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toBeVisible({ timeout: 8000 });
+
+  // 切到然竣会话：这里不应出现太显的回复
+  await page.getByRole("button", { name: "返回", exact: true }).last().click();
+  await backHome(page);
+  await openKakaoThread(page, "然竣哥");
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toHaveCount(0);
+
+  // 然竣会话发"猫"：太显不应被唤醒，然竣自己随机回一句
+  await page.getByRole("textbox", { name: "KKT消息" }).fill("猫");
+  await page.getByRole("button", { name: "发送KKT消息" }).click();
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toHaveCount(0);
+  await expect(page.locator(".kzm").last()).toBeVisible({ timeout: 8000 });
+
+  // 回到太显会话：消息仍然是先前那一条，不会多出然竣的回应
+  await page.getByRole("button", { name: "返回", exact: true }).last().click();
+  await backHome(page);
+  await openKakaoThread(page, "太显");
+  await expect(
+    page.locator(".kzbub").filter({ hasText: "都说了我不是猫啊" }),
+  ).toHaveCount(1);
+});

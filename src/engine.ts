@@ -131,6 +131,27 @@ function runQueue(
           ? !conditions.every(Boolean)
           : conditions.every(Boolean);
     if (!pass) continue;
+    // NPC 互动按对话框隔离：variable 事件触发的节点如果带了 reply 且指定了
+    // meta.thread，只允许在玩家于该对话框发送消息时触发。
+    // 这样在然竣对话框发"猫"不会唤醒太显的关键词回复。
+    if (event === "variable" && target.startsWith("ui:kakao:mymyKktSent")) {
+      const replyThread = n.actions.find(
+        (a) => a.type === "reply",
+      )?.meta?.thread;
+      if (replyThread) {
+        const sentList = s.ui?.["kakao"]?.["mymyKktSent"];
+        const last = Array.isArray(sentList) ? sentList[sentList.length - 1] : undefined;
+        let lastThread = "";
+        try {
+          const parsed = last ? JSON.parse(last) : null;
+          if (Array.isArray(parsed) && typeof parsed[0] === "string")
+            lastThread = parsed[0];
+        } catch {
+          // ignore
+        }
+        if (lastThread !== replyThread) continue;
+      }
+    }
     const replyActions = n.actions.filter((a) => a.type === "reply");
     if (replyActions.length) {
       const pool = replyActions[0].meta?.randomPool;
